@@ -14,41 +14,50 @@ export default function MonthlyInsights() {
             </p>
           </div>
 
-          <div className="bg-white rounded-xl shadow-lg p-8 md:p-12 mb-8">
-            <div className="flex items-center gap-3 mb-6">
-              <FileText className="text-accent-600" size={28} />
-              <h3 className="text-2xl font-semibold text-navy-900">
+          <div className="bg-white rounded-2xl shadow-2xl p-10 md:p-14 mb-10 border border-navy-100/50 overflow-hidden relative group">
+            <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-accent-100/30 to-transparent rounded-bl-full"></div>
+            <div className="relative flex items-center gap-4 mb-8">
+              <div className="w-14 h-14 bg-gradient-to-br from-accent-100 to-accent-200 rounded-xl flex items-center justify-center shadow-lg">
+                <FileText className="text-accent-700" size={28} />
+              </div>
+              <h3 className="text-3xl font-bold text-navy-900">
                 Sample Monthly Report
               </h3>
             </div>
 
-            <div className="space-y-6 mb-8">
-              <div className="border-l-4 border-accent-500 pl-4">
-                <div className="flex items-center gap-2 mb-2">
-                  <TrendingUp className="text-accent-600" size={20} />
-                  <h4 className="font-semibold text-navy-900">Traffic Trends</h4>
+            <div className="relative space-y-6 mb-8">
+              <div className="border-l-4 border-accent-500 pl-6 py-3 bg-gradient-to-r from-accent-50/50 to-transparent rounded-r-lg">
+                <div className="flex items-center gap-3 mb-2">
+                  <div className="w-10 h-10 bg-accent-100 rounded-lg flex items-center justify-center">
+                    <TrendingUp className="text-accent-700" size={20} />
+                  </div>
+                  <h4 className="font-bold text-navy-900 text-lg">Traffic Trends</h4>
                 </div>
-                <p className="text-navy-700 text-sm">
+                <p className="text-navy-700 text-base ml-13">
                   Website visits increased 15% this month. Your "Services" page is getting the most attention—consider adding more detail there.
                 </p>
               </div>
 
-              <div className="border-l-4 border-accent-500 pl-4">
-                <div className="flex items-center gap-2 mb-2">
-                  <MousePointerClick className="text-accent-600" size={20} />
-                  <h4 className="font-semibold text-navy-900">Conversion Opportunities</h4>
+              <div className="border-l-4 border-accent-500 pl-6 py-3 bg-gradient-to-r from-accent-50/50 to-transparent rounded-r-lg">
+                <div className="flex items-center gap-3 mb-2">
+                  <div className="w-10 h-10 bg-accent-100 rounded-lg flex items-center justify-center">
+                    <MousePointerClick className="text-accent-700" size={20} />
+                  </div>
+                  <h4 className="font-bold text-navy-900 text-lg">Conversion Opportunities</h4>
                 </div>
-                <p className="text-navy-700 text-sm">
+                <p className="text-navy-700 text-base ml-13">
                   Contact form submissions are steady, but many visitors leave before reaching it. Try moving your contact form higher on the page.
                 </p>
               </div>
 
-              <div className="border-l-4 border-accent-500 pl-4">
-                <div className="flex items-center gap-2 mb-2">
-                  <Users className="text-accent-600" size={20} />
-                  <h4 className="font-semibold text-navy-900">Content Ideas</h4>
+              <div className="border-l-4 border-accent-500 pl-6 py-3 bg-gradient-to-r from-accent-50/50 to-transparent rounded-r-lg">
+                <div className="flex items-center gap-3 mb-2">
+                  <div className="w-10 h-10 bg-accent-100 rounded-lg flex items-center justify-center">
+                    <Users className="text-accent-700" size={20} />
+                  </div>
+                  <h4 className="font-bold text-navy-900 text-lg">Content Ideas</h4>
                 </div>
-                <p className="text-navy-700 text-sm">
+                <p className="text-navy-700 text-base ml-13">
                   Based on search trends in your area, consider creating content about "eco-friendly options" and "same-day service."
                 </p>
               </div>

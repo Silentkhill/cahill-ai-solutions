@@ -99,28 +99,32 @@ export default function Services() {
             {oneTimePackages.map((pkg, index) => (
               <div
                 key={index}
-                className={`border-2 rounded-xl p-8 hover:shadow-xl transition-all duration-300 bg-white ${
+                className={`relative rounded-2xl p-10 hover:shadow-2xl transition-all duration-500 bg-white overflow-hidden group ${
                   index === 1
-                    ? 'border-accent-400 shadow-lg'
-                    : 'border-navy-200 hover:border-accent-300'
+                    ? 'border-2 border-accent-400 shadow-xl ring-4 ring-accent-100'
+                    : 'border-2 border-navy-200 hover:border-accent-300 shadow-lg'
                 }`}
               >
-                <div className="mb-6">
+                {index === 1 && (
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-accent-400/20 to-transparent rounded-bl-full"></div>
+                )}
+                <div className="absolute inset-0 bg-gradient-to-br from-transparent via-white to-accent-50/0 group-hover:via-accent-50/30 transition-all duration-500"></div>
+                <div className="relative mb-8">
                   {index === 1 && (
-                    <div className="text-xs font-semibold text-accent-700 bg-accent-100 px-3 py-1 rounded-full inline-block mb-3">
-                      MOST POPULAR
+                    <div className="text-xs font-bold text-accent-700 bg-gradient-to-r from-accent-100 to-accent-200 px-4 py-1.5 rounded-full inline-block mb-4 shadow-md">
+                      ⭐ MOST POPULAR
                     </div>
                   )}
-                  <h4 className="text-2xl font-bold text-navy-900 mb-2">
+                  <h4 className="text-3xl font-bold text-navy-900 mb-3">
                     {pkg.name}
                   </h4>
-                  <div className="flex items-baseline gap-2 mb-2">
-                    <span className="text-4xl font-bold text-accent-600">
+                  <div className="flex items-baseline gap-2 mb-3">
+                    <span className="text-5xl font-extrabold text-gradient">
                       {pkg.price}
                     </span>
-                    <span className="text-navy-600 text-sm">one-time</span>
+                    <span className="text-navy-600 text-base font-medium">one-time</span>
                   </div>
-                  <p className="text-navy-600">{pkg.description}</p>
+                  <p className="text-lg text-navy-600 font-medium">{pkg.description}</p>
                 </div>
                 <ul className="space-y-3 mb-6">
                   {pkg.features.map((feature, idx) => (
@@ -132,9 +136,10 @@ export default function Services() {
                 </ul>
                 <button
                   onClick={scrollToContact}
-                  className="w-full px-6 py-3 bg-accent-600 text-white rounded-lg hover:bg-accent-700 transition-colors font-medium"
+                  className="relative w-full px-6 py-4 bg-gradient-to-r from-accent-600 to-accent-700 text-white rounded-xl hover:from-accent-700 hover:to-accent-800 transition-all duration-300 font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 overflow-hidden group/btn"
                 >
-                  Get Started
+                  <span className="relative z-10">Get Started</span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover/btn:translate-x-[100%] transition-transform duration-1000"></div>
                 </button>
               </div>
             ))}
@@ -156,29 +161,36 @@ export default function Services() {
             {monthlyPlans.map((plan, index) => (
               <div
                 key={index}
-                className={`border-2 rounded-xl p-6 transition-all duration-300 ${
+                className={`relative rounded-2xl p-8 transition-all duration-500 overflow-hidden group ${
                   index === 1
-                    ? 'border-accent-400 shadow-xl bg-accent-50'
-                    : 'border-navy-200 bg-white hover:border-accent-300 hover:shadow-lg'
+                    ? 'border-2 border-accent-400 shadow-2xl bg-gradient-to-br from-accent-50 to-white ring-4 ring-accent-100 scale-105'
+                    : 'border-2 border-navy-200 bg-white hover:border-accent-300 hover:shadow-xl card-premium'
                 }`}
               >
                 {index === 1 && (
-                  <div className="text-xs font-semibold text-accent-700 bg-accent-200 px-2 py-1 rounded-full inline-block mb-3">
-                    MOST POPULAR
-                  </div>
+                  <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-accent-400/30 to-transparent rounded-bl-full"></div>
                 )}
-                <div className="mb-4">
-                  <h4 className="text-xl font-bold text-navy-900 mb-2">
-                    {plan.name}
-                  </h4>
-                  <div className="flex items-baseline gap-1 mb-2">
-                    <span className="text-3xl font-bold text-accent-600">
-                      {plan.price}
-                    </span>
-                    <span className="text-navy-600">{plan.period}</span>
+                <div className={`absolute inset-0 bg-gradient-to-br from-transparent via-white to-accent-50/0 transition-all duration-500 ${
+                  index === 1 ? 'via-accent-50/50' : 'group-hover:via-accent-50/30'
+                }`}></div>
+                <div className="relative">
+                  {index === 1 && (
+                    <div className="text-xs font-bold text-accent-700 bg-gradient-to-r from-accent-200 to-accent-300 px-3 py-1.5 rounded-full inline-block mb-4 shadow-md">
+                      ⭐ MOST POPULAR
+                    </div>
+                  )}
+                  <div className="mb-6">
+                    <h4 className="text-2xl font-bold text-navy-900 mb-3">
+                      {plan.name}
+                    </h4>
+                    <div className="flex items-baseline gap-2 mb-3">
+                      <span className="text-4xl font-extrabold text-gradient">
+                        {plan.price}
+                      </span>
+                      <span className="text-navy-600 font-medium">{plan.period}</span>
+                    </div>
+                    <p className="text-base text-navy-600 font-medium">{plan.description}</p>
                   </div>
-                  <p className="text-sm text-navy-600">{plan.description}</p>
-                </div>
                 <ul className="space-y-2 mb-6">
                   {plan.features.map((feature, idx) => (
                     <li key={idx} className="flex items-start gap-2">
@@ -189,13 +201,16 @@ export default function Services() {
                 </ul>
                 <button
                   onClick={scrollToContact}
-                  className={`w-full px-4 py-2 rounded-lg font-medium transition-colors ${
+                  className={`relative w-full px-6 py-3 rounded-xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 overflow-hidden group/btn ${
                     index === 1
-                      ? 'bg-accent-600 text-white hover:bg-accent-700'
+                      ? 'bg-gradient-to-r from-accent-600 to-accent-700 text-white hover:from-accent-700 hover:to-accent-800'
                       : 'bg-navy-100 text-navy-900 hover:bg-navy-200'
                   }`}
                 >
-                  Get Started
+                  <span className="relative z-10">Get Started</span>
+                  {index === 1 && (
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover/btn:translate-x-[100%] transition-transform duration-1000"></div>
+                  )}
                 </button>
               </div>
             ))}

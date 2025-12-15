@@ -43,15 +43,20 @@ export default function TrustSignals() {
               return (
                 <div
                   key={index}
-                  className="text-center p-6 rounded-lg bg-navy-50/50 hover:bg-navy-50 transition-colors"
+                  className="group relative text-center p-8 rounded-2xl bg-white border border-navy-100/50 hover:border-accent-200 card-premium overflow-hidden"
                 >
-                  <div className="inline-flex items-center justify-center w-14 h-14 bg-accent-100 rounded-full mb-4">
-                    <Icon className="text-accent-600" size={28} />
+                  <div className="absolute inset-0 bg-gradient-to-br from-transparent via-white to-accent-50/0 group-hover:via-accent-50/40 transition-all duration-500"></div>
+                  
+                  <div className="relative mb-6">
+                    <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-accent-100 to-accent-200 rounded-2xl mb-4 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 shadow-lg">
+                      <Icon className="text-accent-700" size={30} />
+                    </div>
                   </div>
-                  <h3 className="text-lg font-semibold text-navy-900 mb-2">
+                  
+                  <h3 className="relative text-xl font-bold text-navy-900 mb-3 group-hover:text-accent-700 transition-colors">
                     {point.title}
                   </h3>
-                  <p className="text-sm text-navy-700 leading-relaxed">
+                  <p className="relative text-sm text-navy-700 leading-relaxed">
                     {point.description}
                   </p>
                 </div>

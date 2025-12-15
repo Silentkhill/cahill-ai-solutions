@@ -41,23 +41,35 @@ export default function Benefits() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {benefits.map((benefit, index) => {
             const Icon = benefit.icon
             return (
               <div
                 key={index}
-                className="p-6 rounded-xl border border-navy-100 hover:border-accent-300 hover:shadow-lg transition-all duration-300 bg-white group"
+                className="group relative p-8 rounded-2xl card-premium bg-white border border-navy-100/50 overflow-hidden"
+                style={{ animationDelay: `${index * 100}ms` }}
               >
-                <div className="w-12 h-12 bg-accent-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-accent-200 group-hover:scale-110 transition-all duration-300">
-                  <Icon className="text-accent-600" size={24} />
+                {/* Gradient accent on hover */}
+                <div className="absolute inset-0 bg-gradient-to-br from-accent-50/0 to-accent-100/0 group-hover:from-accent-50/50 group-hover:to-accent-100/30 transition-all duration-500"></div>
+                
+                {/* Icon container with premium styling */}
+                <div className="relative mb-6">
+                  <div className="w-16 h-16 bg-gradient-to-br from-accent-100 to-accent-200 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 shadow-lg group-hover:shadow-xl">
+                    <Icon className="text-accent-700" size={28} />
+                  </div>
+                  <div className="absolute -top-2 -right-2 w-8 h-8 bg-accent-500/10 rounded-full blur-sm group-hover:bg-accent-500/20 transition-all duration-500"></div>
                 </div>
-                <h3 className="text-xl font-semibold text-navy-900 mb-2">
+                
+                <h3 className="relative text-2xl font-bold text-navy-900 mb-3 group-hover:text-accent-700 transition-colors">
                   {benefit.title}
                 </h3>
-                <p className="text-navy-700 leading-relaxed">
+                <p className="relative text-navy-700 leading-relaxed text-base">
                   {benefit.description}
                 </p>
+                
+                {/* Decorative element */}
+                <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-accent-200 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               </div>
             )
           })}

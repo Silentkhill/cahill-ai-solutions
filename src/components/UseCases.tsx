@@ -62,13 +62,15 @@ export default function UseCases() {
             return (
               <div
                 key={index}
-                className="border border-navy-200 rounded-xl p-6 hover:border-accent-300 hover:shadow-lg transition-all duration-300 bg-white"
+                className="group relative border-2 border-navy-200 rounded-2xl p-8 hover:border-accent-300 card-premium bg-white overflow-hidden"
               >
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="w-12 h-12 bg-accent-100 rounded-lg flex items-center justify-center">
-                    <Icon className="text-accent-600" size={24} />
+                <div className="absolute inset-0 bg-gradient-to-br from-transparent via-white to-accent-50/0 group-hover:via-accent-50/30 transition-all duration-500"></div>
+                
+                <div className="relative flex items-center gap-5 mb-6">
+                  <div className="w-16 h-16 bg-gradient-to-br from-accent-100 to-accent-200 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:rotate-3 transition-all duration-500">
+                    <Icon className="text-accent-700" size={28} />
                   </div>
-                  <h3 className="text-xl font-semibold text-navy-900">
+                  <h3 className="text-2xl font-bold text-navy-900 group-hover:text-accent-700 transition-colors">
                     {useCase.title}
                   </h3>
                 </div>

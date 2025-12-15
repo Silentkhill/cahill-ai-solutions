@@ -89,55 +89,66 @@ export default function Contact() {
           </div>
 
           <div className="grid md:grid-cols-2 gap-6 md:gap-8 mb-8">
-            <div className="bg-white rounded-xl shadow-lg p-6 md:p-8 hover:shadow-xl transition-shadow">
-              <div className="flex items-center gap-3 mb-4">
-                <Calendar className="text-accent-600" size={24} />
-                <h3 className="text-xl font-semibold text-navy-900">
-                  Book a Consultation
-                </h3>
+            <div className="bg-white rounded-2xl shadow-xl p-8 md:p-10 hover:shadow-2xl transition-all duration-300 border border-navy-100/50 group overflow-hidden relative">
+              <div className="absolute inset-0 bg-gradient-to-br from-transparent via-white to-accent-50/0 group-hover:via-accent-50/20 transition-all duration-500"></div>
+              <div className="relative">
+                <div className="flex items-center gap-4 mb-5">
+                  <div className="w-12 h-12 bg-gradient-to-br from-accent-100 to-accent-200 rounded-xl flex items-center justify-center shadow-lg">
+                    <Calendar className="text-accent-700" size={24} />
+                  </div>
+                  <h3 className="text-2xl font-bold text-navy-900">
+                    Book a Consultation
+                  </h3>
+                </div>
+                <p className="text-navy-700 mb-7 text-lg leading-relaxed">
+                  Schedule a 15-minute call to discuss your business needs and see if AI solutions are right for you.
+                </p>
+                <a
+                  href="https://calendly.com/cahillaisolutions"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-accent-600 to-accent-700 text-white rounded-xl hover:from-accent-700 hover:to-accent-800 transition-all duration-300 font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
+                >
+                  <Calendar size={20} />
+                  View Available Times
+                </a>
+                <p className="text-sm text-navy-600 mt-4 italic">
+                  (Calendly link placeholder—replace with your actual booking link)
+                </p>
               </div>
-              <p className="text-navy-700 mb-6">
-                Schedule a 15-minute call to discuss your business needs and see if AI solutions are right for you.
-              </p>
-              <a
-                href="https://calendly.com/cahillaisolutions"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-accent-600 text-white rounded-lg hover:bg-accent-700 transition-colors font-medium"
-              >
-                <Calendar size={20} />
-                View Available Times
-              </a>
-              <p className="text-sm text-navy-600 mt-4 italic">
-                (Calendly link placeholder—replace with your actual booking link)
-              </p>
             </div>
 
-            <div className="bg-white rounded-xl shadow-lg p-6 md:p-8 hover:shadow-xl transition-shadow">
-              <div className="flex items-center gap-3 mb-4">
-                <Mail className="text-accent-600" size={24} />
-                <h3 className="text-xl font-semibold text-navy-900">
-                  Send Us a Message
-                </h3>
+            <div className="bg-white rounded-2xl shadow-xl p-8 md:p-10 hover:shadow-2xl transition-all duration-300 border border-navy-100/50 group overflow-hidden relative">
+              <div className="absolute inset-0 bg-gradient-to-br from-transparent via-white to-accent-50/0 group-hover:via-accent-50/20 transition-all duration-500"></div>
+              <div className="relative">
+                <div className="flex items-center gap-4 mb-5">
+                  <div className="w-12 h-12 bg-gradient-to-br from-navy-100 to-navy-200 rounded-xl flex items-center justify-center shadow-lg">
+                    <Mail className="text-navy-700" size={24} />
+                  </div>
+                  <h3 className="text-2xl font-bold text-navy-900">
+                    Send Us a Message
+                  </h3>
+                </div>
+                <p className="text-navy-700 mb-7 text-lg leading-relaxed">
+                  Prefer email? Fill out the form or send us a message directly.
+                </p>
+                <a
+                  href={mailtoLink}
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-navy-100 text-navy-900 rounded-xl hover:bg-navy-200 transition-all duration-300 font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
+                >
+                  <Mail size={20} />
+                  Email Us Directly
+                </a>
+                <p className="text-sm text-navy-600 mt-4">
+                  <Phone size={16} className="inline mr-1" />
+                  Or call: (416) 555-0123
+                </p>
               </div>
-              <p className="text-navy-700 mb-6">
-                Prefer email? Fill out the form or send us a message directly.
-              </p>
-              <a
-                href={mailtoLink}
-                className="inline-flex items-center gap-2 px-6 py-3 bg-navy-100 text-navy-900 rounded-lg hover:bg-navy-200 transition-colors font-medium"
-              >
-                <Mail size={20} />
-                Email Us Directly
-              </a>
-              <p className="text-sm text-navy-600 mt-2">
-                <Phone size={16} className="inline mr-1" />
-                Or call: (416) 555-0123
-              </p>
             </div>
           </div>
 
-          <div className="bg-white rounded-xl shadow-lg p-6 md:p-8">
+          <div className="bg-white rounded-2xl shadow-xl p-8 md:p-10 border border-navy-100/50 relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-48 h-48 bg-gradient-to-br from-accent-100/10 to-transparent rounded-bl-full"></div>
             <h3 className="text-xl font-semibold text-navy-900 mb-6">
               Contact Form
             </h3>

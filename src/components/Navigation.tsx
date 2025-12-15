@@ -34,10 +34,10 @@ export default function Navigation() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isScrolled
-          ? 'bg-white shadow-md py-3'
-          : 'bg-white/95 backdrop-blur-sm py-4'
+          ? 'bg-white/95 backdrop-blur-md shadow-lg border-b border-navy-100/50 py-3'
+          : 'bg-white/80 backdrop-blur-sm py-5'
       }`}
     >
       <div className="container-custom">
