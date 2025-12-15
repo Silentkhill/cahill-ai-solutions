@@ -104,7 +104,7 @@ export default function Contact() {
                   Schedule a 15-minute call to discuss your business needs and see if AI solutions are right for you.
                 </p>
                 <a
-                  href="https://calendly.com/cahillaisolutions"
+                  href="https://calendly.com/themister_7/30min"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-accent-600 to-accent-700 text-white rounded-xl hover:from-accent-700 hover:to-accent-800 transition-all duration-300 font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
@@ -112,9 +112,6 @@ export default function Contact() {
                   <Calendar size={20} />
                   View Available Times
                 </a>
-                <p className="text-sm text-navy-600 mt-4 italic">
-                  (Calendly link placeholder—replace with your actual booking link)
-                </p>
               </div>
             </div>
 
