@@ -14,12 +14,12 @@ const benefits = [
   {
     icon: TrendingUp,
     title: 'Better Decisions',
-    description: 'Monthly reports show you what's working: which pages get attention, what converts, and where to focus next. No guesswork.',
+    description: 'Monthly reports show you what\'s working: which pages get attention, what converts, and where to focus next. No guesswork.',
   },
   {
     icon: MessageSquare,
     title: 'Consistent Responses',
-    description: 'Handle customer inquiries 24/7 with a website chatbot. Answer common questions instantly, even when you're busy.',
+    description: 'Handle customer inquiries 24/7 with a website chatbot. Answer common questions instantly, even when you\'re busy.',
   },
   {
     icon: CheckCircle,
