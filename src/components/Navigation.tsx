@@ -48,7 +48,8 @@ export default function Navigation() {
               e.preventDefault()
               window.scrollTo({ top: 0, behavior: 'smooth' })
             }}
-            className="text-xl font-bold text-navy-900 hover:text-accent-600 transition-colors"
+            className="text-xl font-bold text-navy-900 hover:text-accent-600 transition-colors focus:outline-none focus:ring-2 focus:ring-accent-500 focus:ring-offset-2 rounded"
+            aria-label="Cahill AI Solutions - Home"
           >
             Cahill AI Solutions
           </a>
@@ -60,7 +61,7 @@ export default function Navigation() {
                 key={item.href}
                 href={item.href}
                 onClick={(e) => handleNavClick(e, item.href)}
-                className="text-sm font-medium text-navy-700 hover:text-accent-600 transition-colors"
+                className="text-sm font-medium text-navy-700 hover:text-accent-600 transition-colors focus:outline-none focus:ring-2 focus:ring-accent-500 focus:ring-offset-2 rounded"
               >
                 {item.label}
               </a>
@@ -68,7 +69,7 @@ export default function Navigation() {
             <a
               href="#contact"
               onClick={(e) => handleNavClick(e, '#contact')}
-              className="px-4 py-2 bg-accent-600 text-white rounded-lg hover:bg-accent-700 transition-colors text-sm font-medium"
+              className="px-4 py-2 bg-accent-600 text-white rounded-lg hover:bg-accent-700 transition-colors text-sm font-medium focus:outline-none focus:ring-2 focus:ring-accent-500 focus:ring-offset-2"
             >
               Book Consult
             </a>

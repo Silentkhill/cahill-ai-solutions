@@ -88,8 +88,8 @@ export default function Contact() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8 mb-8">
-            <div className="bg-white rounded-xl shadow-lg p-8">
+          <div className="grid md:grid-cols-2 gap-6 md:gap-8 mb-8">
+            <div className="bg-white rounded-xl shadow-lg p-6 md:p-8 hover:shadow-xl transition-shadow">
               <div className="flex items-center gap-3 mb-4">
                 <Calendar className="text-accent-600" size={24} />
                 <h3 className="text-xl font-semibold text-navy-900">
@@ -113,7 +113,7 @@ export default function Contact() {
               </p>
             </div>
 
-            <div className="bg-white rounded-xl shadow-lg p-8">
+            <div className="bg-white rounded-xl shadow-lg p-6 md:p-8 hover:shadow-xl transition-shadow">
               <div className="flex items-center gap-3 mb-4">
                 <Mail className="text-accent-600" size={24} />
                 <h3 className="text-xl font-semibold text-navy-900">
@@ -137,12 +137,12 @@ export default function Contact() {
             </div>
           </div>
 
-          <div className="bg-white rounded-xl shadow-lg p-8">
+          <div className="bg-white rounded-xl shadow-lg p-6 md:p-8">
             <h3 className="text-xl font-semibold text-navy-900 mb-6">
               Contact Form
             </h3>
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid md:grid-cols-2 gap-6">
+            <form onSubmit={handleSubmit} className="space-y-5 md:space-y-6" noValidate>
+              <div className="grid md:grid-cols-2 gap-5 md:gap-6">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-navy-900 mb-2">
                     Name <span className="text-accent-600">*</span>
@@ -153,13 +153,18 @@ export default function Contact() {
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
+                    aria-required="true"
+                    aria-invalid={!!errors.name}
+                    aria-describedby={errors.name ? 'name-error' : undefined}
                     className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-accent-500 ${
                       errors.name ? 'border-red-500' : 'border-navy-300'
                     }`}
                     placeholder="Your name"
                   />
                   {errors.name && (
-                    <p className="mt-1 text-sm text-red-600">{errors.name}</p>
+                    <p id="name-error" className="mt-1 text-sm text-red-600" role="alert">
+                      {errors.name}
+                    </p>
                   )}
                 </div>
 
@@ -173,18 +178,23 @@ export default function Contact() {
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
+                    aria-required="true"
+                    aria-invalid={!!errors.email}
+                    aria-describedby={errors.email ? 'email-error' : undefined}
                     className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-accent-500 ${
                       errors.email ? 'border-red-500' : 'border-navy-300'
                     }`}
                     placeholder="your@email.com"
                   />
                   {errors.email && (
-                    <p className="mt-1 text-sm text-red-600">{errors.email}</p>
+                    <p id="email-error" className="mt-1 text-sm text-red-600" role="alert">
+                      {errors.email}
+                    </p>
                   )}
                 </div>
               </div>
 
-              <div className="grid md:grid-cols-2 gap-6">
+              <div className="grid md:grid-cols-2 gap-5 md:gap-6">
                 <div>
                   <label htmlFor="phone" className="block text-sm font-medium text-navy-900 mb-2">
                     Phone
@@ -226,13 +236,18 @@ export default function Contact() {
                   value={formData.message}
                   onChange={handleChange}
                   rows={5}
+                  aria-required="true"
+                  aria-invalid={!!errors.message}
+                  aria-describedby={errors.message ? 'message-error' : undefined}
                   className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-accent-500 ${
                     errors.message ? 'border-red-500' : 'border-navy-300'
                   }`}
                   placeholder="Tell us about your business and what you'd like to improve..."
                 />
                 {errors.message && (
-                  <p className="mt-1 text-sm text-red-600">{errors.message}</p>
+                  <p id="message-error" className="mt-1 text-sm text-red-600" role="alert">
+                    {errors.message}
+                  </p>
                 )}
               </div>
 

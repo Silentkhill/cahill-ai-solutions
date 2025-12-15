@@ -23,7 +23,7 @@ const steps = [
 
 export default function HowItWorks() {
   return (
-    <section id="how-it-works" className="section-padding bg-navy-50">
+    <section id="how-it-works" className="section-padding bg-gradient-to-b from-navy-50 to-white">
       <div className="container-custom">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-navy-900 mb-4">

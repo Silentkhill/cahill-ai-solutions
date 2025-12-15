@@ -89,16 +89,28 @@ export default function Services() {
 
         {/* One-Time Packages */}
         <div className="mb-20">
-          <h3 className="text-2xl font-semibold text-navy-900 mb-8 text-center">
+          <h3 className="text-2xl font-semibold text-navy-900 mb-3 text-center">
             One-Time Setup & Implementation
           </h3>
+          <p className="text-center text-navy-600 mb-8 text-sm">
+            Starting at $750. All packages include AI setup, training, and support.
+          </p>
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {oneTimePackages.map((pkg, index) => (
               <div
                 key={index}
-                className="border-2 border-navy-200 rounded-xl p-8 hover:border-accent-400 hover:shadow-xl transition-all duration-300 bg-white"
+                className={`border-2 rounded-xl p-8 hover:shadow-xl transition-all duration-300 bg-white ${
+                  index === 1
+                    ? 'border-accent-400 shadow-lg'
+                    : 'border-navy-200 hover:border-accent-300'
+                }`}
               >
                 <div className="mb-6">
+                  {index === 1 && (
+                    <div className="text-xs font-semibold text-accent-700 bg-accent-100 px-3 py-1 rounded-full inline-block mb-3">
+                      MOST POPULAR
+                    </div>
+                  )}
                   <h4 className="text-2xl font-bold text-navy-900 mb-2">
                     {pkg.name}
                   </h4>
@@ -106,6 +118,7 @@ export default function Services() {
                     <span className="text-4xl font-bold text-accent-600">
                       {pkg.price}
                     </span>
+                    <span className="text-navy-600 text-sm">one-time</span>
                   </div>
                   <p className="text-navy-600">{pkg.description}</p>
                 </div>

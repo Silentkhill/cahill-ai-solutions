@@ -2,7 +2,7 @@ import { User } from 'lucide-react'
 
 export default function About() {
   return (
-    <section id="about" className="section-padding bg-navy-50">
+    <section id="about" className="section-padding bg-gradient-to-b from-white to-navy-50">
       <div className="container-custom">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-12">
