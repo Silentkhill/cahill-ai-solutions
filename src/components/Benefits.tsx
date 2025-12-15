@@ -37,7 +37,7 @@ export default function Benefits() {
             What This Does for You
           </h2>
           <p className="text-lg text-navy-700 max-w-2xl mx-auto">
-            Real outcomes for Toronto small businesses. Here's what you can expect.
+            Real outcomes for Toronto small businesses. Here\'s what you can expect.
           </p>
         </div>
 
