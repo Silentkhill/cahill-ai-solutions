@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { ChevronDown } from 'lucide-react'
+import { ChevronDown, HelpCircle } from 'lucide-react'
 
 const faqs = [
   {
@@ -44,14 +44,24 @@ export default function FAQ() {
   }
 
   return (
-    <section id="faq" className="section-padding bg-white">
-      <div className="container-custom">
-        <div className="max-w-3xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-navy-900 mb-4">
-              Frequently Asked Questions
+    <section id="faq" className="section-padding bg-gradient-to-b from-white via-navy-50/30 to-white relative overflow-hidden">
+      {/* Creative background */}
+      <div className="absolute inset-0">
+        <div className="blob-bg w-[500px] h-[500px] bg-accent-100/10 absolute top-20 -left-40"></div>
+        <div className="blob-bg w-[400px] h-[400px] bg-navy-100/10 absolute bottom-20 -right-40"></div>
+      </div>
+      
+      <div className="container-custom relative z-10">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-accent-100 to-accent-200 rounded-3xl mb-6 shadow-2xl">
+              <HelpCircle className="text-accent-700" size={40} />
+            </div>
+            <h2 className="text-5xl sm:text-6xl font-black text-navy-900 mb-4">
+              Frequently Asked{' '}
+              <span className="text-gradient">Questions</span>
             </h2>
-            <p className="text-lg text-navy-700">
+            <p className="text-xl text-navy-700 max-w-2xl mx-auto font-light">
               Common questions from business owners like you.
             </p>
           </div>
@@ -60,40 +70,66 @@ export default function FAQ() {
             {faqs.map((faq, index) => (
               <div
                 key={index}
-                className="border border-navy-200 rounded-lg overflow-hidden bg-white"
+                className={`card-creative bg-white overflow-hidden transition-all duration-500 ${
+                  openIndex === index ? 'shadow-2xl border-2 border-accent-200' : 'shadow-lg border border-navy-100'
+                }`}
               >
                 <button
                   onClick={() => toggleFAQ(index)}
                   aria-expanded={openIndex === index}
                   aria-controls={`faq-answer-${index}`}
-                  className="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-navy-50 transition-colors focus:outline-none focus:ring-2 focus:ring-accent-500 focus:ring-inset"
+                  className="w-full px-8 py-6 text-left flex items-center justify-between hover:bg-accent-50/30 transition-all duration-300 group"
                 >
-                  <span className="font-semibold text-navy-900 pr-4">
-                    {faq.question}
-                  </span>
+                  <div className="flex items-start gap-4 flex-1">
+                    <div className={`w-10 h-10 bg-gradient-to-br from-accent-100 to-accent-200 rounded-xl flex items-center justify-center flex-shrink-0 mt-1 group-hover:scale-110 transition-transform ${
+                      openIndex === index ? 'from-accent-400 to-accent-600' : ''
+                    }`}>
+                      <span className="text-accent-700 font-bold text-sm">{index + 1}</span>
+                    </div>
+                    <span className="font-bold text-lg text-navy-900 group-hover:text-accent-700 transition-colors pr-4">
+                      {faq.question}
+                    </span>
+                  </div>
                   <ChevronDown
-                    className={`text-navy-600 flex-shrink-0 transition-transform ${
-                      openIndex === index ? 'rotate-180' : ''
+                    className={`text-navy-600 flex-shrink-0 transition-all duration-300 ${
+                      openIndex === index ? 'rotate-180 text-accent-600' : ''
                     }`}
-                    size={20}
+                    size={24}
                     aria-hidden="true"
                   />
                 </button>
-                {openIndex === index && (
-                  <div
-                    id={`faq-answer-${index}`}
-                    className="px-6 py-4 bg-navy-50 border-t border-navy-200"
-                    role="region"
-                  >
-                    <p className="text-navy-700 leading-relaxed">{faq.answer}</p>
+                <div
+                  id={`faq-answer-${index}`}
+                  className={`overflow-hidden transition-all duration-500 ${
+                    openIndex === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+                  }`}
+                  role="region"
+                >
+                  <div className="px-8 py-6 bg-gradient-to-br from-accent-50/50 to-white border-t-2 border-accent-100">
+                    <p className="text-navy-700 leading-relaxed text-base pl-14">{faq.answer}</p>
                   </div>
-                )}
+                </div>
               </div>
             ))}
+          </div>
+          
+          {/* Creative CTA */}
+          <div className="mt-16 text-center">
+            <div className="inline-block p-8 bg-gradient-to-br from-navy-900 to-navy-800 rounded-3xl shadow-2xl text-white">
+              <p className="text-xl font-bold mb-4">
+                Still have questions?
+              </p>
+              <a
+                href="#contact"
+                className="inline-flex items-center gap-3 px-8 py-4 bg-white text-navy-900 rounded-xl font-bold hover:bg-accent-50 transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1"
+              >
+                <span>Get in Touch</span>
+                <ChevronDown size={20} className="rotate-[-90deg]" />
+              </a>
+            </div>
           </div>
         </div>
       </div>
     </section>
   )
 }
-
