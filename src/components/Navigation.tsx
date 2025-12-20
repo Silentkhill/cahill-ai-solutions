@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { Menu, X, Sparkles } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
 
 const navItems = [
   { label: 'Services', href: '#services' },
@@ -32,10 +32,10 @@ export default function Navigation() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-white/95 backdrop-blur-xl shadow-2xl border-b-2 border-accent-100/50 py-3'
-          : 'bg-white/70 backdrop-blur-lg py-5'
+          ? 'bg-white shadow-md border-b border-navy-100 py-3'
+          : 'bg-white/95 py-4'
       }`}
     >
       <div className="container-custom">
@@ -46,11 +46,10 @@ export default function Navigation() {
               e.preventDefault()
               window.scrollTo({ top: 0, behavior: 'smooth' })
             }}
-            className="group flex items-center gap-2 text-xl font-black text-navy-900 hover:text-accent-600 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-accent-500 focus:ring-offset-2 rounded-lg px-2"
+            className="text-lg font-bold text-navy-900 hover:text-accent-600 transition-colors focus:outline-none focus:ring-2 focus:ring-accent-500 focus:ring-offset-2 rounded"
             aria-label="Cahill AI Solutions - Home"
           >
-            <Sparkles className="w-5 h-5 text-accent-600 group-hover:rotate-180 transition-transform duration-500" />
-            <span>Cahill AI Solutions</span>
+            Cahill AI Solutions
           </a>
 
           {/* Desktop Navigation */}
@@ -60,7 +59,7 @@ export default function Navigation() {
                 key={item.href}
                 href={item.href}
                 onClick={(e) => handleNavClick(e, item.href)}
-                className="relative text-sm font-semibold text-navy-700 hover:text-accent-600 transition-colors focus:outline-none focus:ring-2 focus:ring-accent-500 focus:ring-offset-2 rounded px-2 py-1 underline-creative"
+                className="text-sm font-medium text-navy-700 hover:text-accent-600 transition-colors focus:outline-none focus:ring-2 focus:ring-accent-500 focus:ring-offset-2 rounded"
               >
                 {item.label}
               </a>
@@ -68,7 +67,7 @@ export default function Navigation() {
             <a
               href="#contact"
               onClick={(e) => handleNavClick(e, '#contact')}
-              className="px-5 py-2.5 bg-gradient-to-r from-accent-600 to-accent-700 text-white rounded-xl hover:from-accent-700 hover:to-accent-800 transition-all duration-300 text-sm font-bold shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-accent-500 focus:ring-offset-2"
+              className="px-4 py-2 bg-accent-600 text-white rounded-lg hover:bg-accent-700 transition-colors text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-accent-500 focus:ring-offset-2"
             >
               Free AI Review
             </a>
@@ -77,7 +76,7 @@ export default function Navigation() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden p-2 text-navy-900 hover:bg-navy-100 rounded-lg transition-colors"
+            className="md:hidden p-2 text-navy-900 hover:bg-navy-100 rounded transition-colors"
             aria-label="Toggle menu"
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -86,13 +85,13 @@ export default function Navigation() {
 
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <div className="md:hidden mt-4 pb-4 space-y-2 animate-fade-in-up">
+          <div className="md:hidden mt-4 pb-4 space-y-2">
             {navItems.map((item) => (
               <a
                 key={item.href}
                 href={item.href}
                 onClick={(e) => handleNavClick(e, item.href)}
-                className="block px-4 py-3 text-navy-700 hover:text-accent-600 hover:bg-accent-50 rounded-xl transition-all duration-200 font-medium"
+                className="block px-4 py-2 text-navy-700 hover:text-accent-600 hover:bg-accent-50 rounded transition-colors"
               >
                 {item.label}
               </a>
@@ -100,7 +99,7 @@ export default function Navigation() {
             <a
               href="#contact"
               onClick={(e) => handleNavClick(e, '#contact')}
-              className="block px-4 py-3 bg-gradient-to-r from-accent-600 to-accent-700 text-white rounded-xl hover:from-accent-700 hover:to-accent-800 transition-all duration-300 text-center font-bold mt-4 shadow-lg"
+              className="block px-4 py-2 bg-accent-600 text-white rounded text-center font-semibold mt-2"
             >
               Free AI Review
             </a>

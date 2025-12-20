@@ -46,278 +46,45 @@
 }
 
 @layer utilities {
+  /* Simplified section padding - more breathing room */
   .section-padding {
-    @apply py-24 md:py-32 lg:py-40;
+    @apply py-16 md:py-24 lg:py-32;
   }
   
   .container-custom {
-    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+    @apply max-w-5xl mx-auto px-4 sm:px-6 lg:px-8;
   }
   
-  /* Creative gradient backgrounds */
-  .gradient-creative {
-    background: linear-gradient(135deg, #f0f4f8 0%, #ffffff 25%, #fff7ed 50%, #ffffff 75%, #f0f4f8 100%);
-    background-size: 200% 200%;
-    animation: gradientShift 15s ease infinite;
+  /* Simple, calm backgrounds */
+  .bg-subtle {
+    @apply bg-navy-50/30;
   }
   
-  @keyframes gradientShift {
-    0%, 100% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-  }
-  
-  .gradient-accent {
-    background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
-  }
-  
-  .gradient-navy {
-    background: linear-gradient(135deg, #102a43 0%, #243b53 100%);
-  }
-  
-  /* Creative shine effect */
-  .shine {
-    position: relative;
-    overflow: hidden;
-  }
-  
-  .shine::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(
-      90deg,
-      transparent,
-      rgba(255, 255, 255, 0.4),
-      transparent
-    );
-    transition: left 0.6s;
-  }
-  
-  .shine:hover::before {
-    left: 100%;
-  }
-  
-  /* Creative floating animations */
-  @keyframes float {
-    0%, 100% {
-      transform: translateY(0px) rotate(0deg);
-    }
-    33% {
-      transform: translateY(-15px) rotate(2deg);
-    }
-    66% {
-      transform: translateY(-5px) rotate(-2deg);
-    }
-  }
-  
-  @keyframes floatReverse {
-    0%, 100% {
-      transform: translateY(0px) rotate(0deg);
-    }
-    33% {
-      transform: translateY(-10px) rotate(-2deg);
-    }
-    66% {
-      transform: translateY(-20px) rotate(2deg);
-    }
-  }
-  
-  .animate-float {
-    animation: float 8s ease-in-out infinite;
-  }
-  
-  .animate-float-reverse {
-    animation: floatReverse 10s ease-in-out infinite;
-  }
-  
-  /* Creative fade animations */
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(40px) scale(0.95);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0) scale(1);
-    }
-  }
-  
-  @keyframes fadeInScale {
-    from {
-      opacity: 0;
-      transform: scale(0.8);
-    }
-    to {
-      opacity: 1;
-      transform: scale(1);
-    }
-  }
-  
-  .animate-fade-in-up {
-    animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-  
-  .animate-fade-in-scale {
-    animation: fadeInScale 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-  
-  /* Creative card styles */
-  .card-creative {
-    position: relative;
-    background: white;
-    border-radius: 24px;
-    box-shadow: 
-      0 2px 8px rgba(0, 0, 0, 0.04),
-      0 8px 24px rgba(0, 0, 0, 0.06),
-      0 0 0 1px rgba(0, 0, 0, 0.02);
-    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    overflow: hidden;
-  }
-  
-  .card-creative::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: linear-gradient(90deg, #f97316, #ea580c, #f97316);
-    background-size: 200% 100%;
-    animation: gradientShift 3s ease infinite;
-    opacity: 0;
-    transition: opacity 0.3s;
-  }
-  
-  .card-creative:hover {
-    transform: translateY(-8px) scale(1.02);
-    box-shadow: 
-      0 12px 32px rgba(249, 115, 22, 0.15),
-      0 4px 16px rgba(0, 0, 0, 0.08),
-      0 0 0 1px rgba(249, 115, 22, 0.2);
-  }
-  
-  .card-creative:hover::before {
-    opacity: 1;
-  }
-  
-  /* Glass morphism effect */
-  .glass {
-    background: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(12px) saturate(180%);
-    -webkit-backdrop-filter: blur(12px) saturate(180%);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Creative text gradients */
+  /* Simple text gradient - no animation */
   .text-gradient {
-    background: linear-gradient(135deg, #f97316 0%, #ea580c 50%, #f97316 100%);
-    background-size: 200% 100%;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    animation: gradientShift 3s ease infinite;
-  }
-  
-  .text-gradient-blue {
-    background: linear-gradient(135deg, #334e68 0%, #102a43 100%);
+    background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
   
-  /* Creative organic shapes */
-  .organic-shape {
-    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
-    animation: morphShape 20s ease-in-out infinite;
+  /* Simple card - minimal effects */
+  .card-simple {
+    @apply bg-white rounded-xl shadow-sm border border-navy-100;
+    transition: all 0.2s ease;
   }
   
-  @keyframes morphShape {
-    0%, 100% {
-      border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
-    }
-    25% {
-      border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
-    }
-    50% {
-      border-radius: 70% 30% 50% 50% / 30% 50% 70% 50%;
-    }
-    75% {
-      border-radius: 40% 60% 50% 70% / 70% 40% 60% 50%;
-    }
+  .card-simple:hover {
+    @apply shadow-md border-navy-200;
+    transform: translateY(-2px);
   }
   
-  /* Creative underline effect */
-  .underline-creative {
-    position: relative;
-    display: inline-block;
+  /* Simple button styles */
+  .btn-primary {
+    @apply px-8 py-4 bg-accent-600 text-white rounded-lg font-semibold hover:bg-accent-700 transition-colors focus:outline-none focus:ring-2 focus:ring-accent-500 focus:ring-offset-2;
   }
   
-  .underline-creative::after {
-    content: '';
-    position: absolute;
-    bottom: -4px;
-    left: 0;
-    width: 100%;
-    height: 6px;
-    background: linear-gradient(90deg, #f97316, #ea580c);
-    border-radius: 3px;
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  .btn-secondary {
+    @apply px-8 py-4 bg-white text-accent-600 border-2 border-accent-600 rounded-lg font-semibold hover:bg-accent-50 transition-colors focus:outline-none focus:ring-2 focus:ring-accent-500 focus:ring-offset-2;
   }
-  
-  .underline-creative:hover::after {
-    transform: scaleX(1);
-  }
-  
-  /* Creative pulse effect */
-  @keyframes pulse-creative {
-    0%, 100% {
-      opacity: 1;
-      transform: scale(1);
-    }
-    50% {
-      opacity: 0.8;
-      transform: scale(1.05);
-    }
-  }
-  
-  .pulse-creative {
-    animation: pulse-creative 3s ease-in-out infinite;
-  }
-  
-  /* Creative tilt effect */
-  .tilt-on-hover {
-    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-  
-  .tilt-on-hover:hover {
-    transform: perspective(1000px) rotateX(2deg) rotateY(-2deg) scale(1.02);
-  }
-  
-  /* Creative blob background */
-  .blob-bg {
-    position: absolute;
-    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-    filter: blur(80px);
-    opacity: 0.3;
-    animation: morphShape 15s ease-in-out infinite;
-  }
-  
-  /* Creative staggered animation */
-  .stagger-animation {
-    animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) backwards;
-  }
-  
-  .stagger-animation:nth-child(1) { animation-delay: 0.1s; }
-  .stagger-animation:nth-child(2) { animation-delay: 0.2s; }
-  .stagger-animation:nth-child(3) { animation-delay: 0.3s; }
-  .stagger-animation:nth-child(4) { animation-delay: 0.4s; }
-  .stagger-animation:nth-child(5) { animation-delay: 0.5s; }
-  .stagger-animation:nth-child(6) { animation-delay: 0.6s; }
 }
-
