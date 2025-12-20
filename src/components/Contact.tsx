@@ -68,21 +68,33 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="section-padding bg-white relative">
+    <section id="contact" className="section-padding bg-gradient-to-br from-white via-navy-50/30 to-accent-50/20 relative overflow-hidden">
       {/* Final clarity - noise fully resolved */}
-      <div className="noise-layer" style={{ opacity: 0.05 }} />
+      <div className="noise-layer clarity" />
+      
+      {/* Decorative blobs */}
+      <div className="accent-blob accent-blob-1" style={{ top: '10%', right: '10%', opacity: 0.2 }} />
+      <div className="accent-blob accent-blob-2" style={{ bottom: '10%', left: '10%', opacity: 0.15 }} />
       
       <div className="container-custom relative z-10">
-        <div className="max-w-2xl mx-auto">
-          {/* Asymmetric headline */}
-          <div className="asymmetric-right mb-12">
-            <h2 className="text-headline text-navy-900 mb-4">
+        <div className="max-w-3xl mx-auto">
+          {/* Enhanced headline */}
+          <div className="text-center mb-16">
+            <div className="inline-block px-4 py-2 bg-accent-100/80 backdrop-blur-sm rounded-full border border-accent-200/50 mb-6">
+              <span className="text-sm font-semibold text-accent-900">Let's Get Started</span>
+            </div>
+            <h2 className="text-headline text-navy-900 mb-6">
               Get Your Free AI Opportunity Review
             </h2>
+            <p className="text-subhead text-navy-600 max-w-2xl mx-auto">
+              Let's find out how AI can specifically help your business save time and grow.
+            </p>
           </div>
 
-          <div className="card-focused p-10">
-            <form onSubmit={handleSubmit} className="space-y-6" noValidate>
+          <div className="card-premium p-12 relative overflow-hidden">
+            {/* Decorative gradient */}
+            <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-accent-500 to-accent-600 opacity-5 rounded-full blur-3xl" />
+            <form onSubmit={handleSubmit} className="space-y-6 relative z-10" noValidate>
               <div>
                 <label htmlFor="name" className="block text-sm font-semibold text-navy-900 mb-2">
                   Name <span className="text-accent-600">*</span>
@@ -96,8 +108,8 @@ export default function Contact() {
                   aria-required="true"
                   aria-invalid={!!errors.name}
                   aria-describedby={errors.name ? 'name-error' : undefined}
-                  className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-accent-500 transition-all ${
-                    errors.name ? 'border-red-500' : 'border-navy-200'
+                  className={`w-full px-5 py-4 border-2 rounded-xl focus:outline-none focus:ring-2 focus:ring-accent-500 transition-all bg-white/80 backdrop-blur-sm ${
+                    errors.name ? 'border-red-500' : 'border-navy-200 focus:border-accent-500'
                   }`}
                   placeholder="Your name"
                 />
@@ -118,7 +130,7 @@ export default function Contact() {
                   name="businessName"
                   value={formData.businessName}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 border border-navy-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent-500 transition-all"
+                  className="w-full px-5 py-4 border-2 border-navy-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-accent-500 focus:border-accent-500 transition-all bg-white/80 backdrop-blur-sm"
                   placeholder="Your business name"
                 />
               </div>
@@ -136,8 +148,8 @@ export default function Contact() {
                   aria-required="true"
                   aria-invalid={!!errors.email}
                   aria-describedby={errors.email ? 'email-error' : undefined}
-                  className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-accent-500 transition-all ${
-                    errors.email ? 'border-red-500' : 'border-navy-200'
+                  className={`w-full px-5 py-4 border-2 rounded-xl focus:outline-none focus:ring-2 focus:ring-accent-500 transition-all bg-white/80 backdrop-blur-sm ${
+                    errors.email ? 'border-red-500' : 'border-navy-200 focus:border-accent-500'
                   }`}
                   placeholder="your@email.com"
                 />
@@ -158,7 +170,7 @@ export default function Contact() {
                   name="website"
                   value={formData.website}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 border border-navy-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent-500 transition-all"
+                  className="w-full px-5 py-4 border-2 border-navy-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-accent-500 focus:border-accent-500 transition-all bg-white/80 backdrop-blur-sm"
                   placeholder="https://yourwebsite.com"
                 />
               </div>
@@ -172,7 +184,7 @@ export default function Contact() {
                   name="challenge"
                   value={formData.challenge}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 border border-navy-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent-500 transition-all bg-white"
+                  className="w-full px-5 py-4 border-2 border-navy-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-accent-500 focus:border-accent-500 transition-all bg-white/80 backdrop-blur-sm"
                 >
                   <option value="">Select a challenge...</option>
                   {challenges.map((challenge) => (
@@ -202,14 +214,17 @@ export default function Contact() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="btn-primary w-full flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="btn-primary w-full flex items-center justify-center gap-3 group disabled:opacity-50 disabled:cursor-not-allowed glow-accent-hover"
               >
                 {isSubmitting ? (
-                  'Submitting...'
+                  <>
+                    <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                    <span>Submitting...</span>
+                  </>
                 ) : (
                   <>
-                    <Send size={20} />
-                    Request Review
+                    <span>Request Review</span>
+                    <Send size={20} className="group-hover:translate-x-1 transition-transform" />
                   </>
                 )}
               </button>
