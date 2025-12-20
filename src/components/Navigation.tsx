@@ -2,12 +2,10 @@ import { useState, useEffect } from 'react'
 import { Menu, X, Sparkles } from 'lucide-react'
 
 const navItems = [
-  { label: 'What This Does', href: '#benefits' },
-  { label: 'How It Works', href: '#how-it-works' },
   { label: 'Services', href: '#services' },
-  { label: 'Examples', href: '#use-cases' },
+  { label: 'How It Works', href: '#how-it-works' },
+  { label: 'Pricing', href: '#pricing' },
   { label: 'About', href: '#about' },
-  { label: 'FAQ', href: '#faq' },
   { label: 'Contact', href: '#contact' },
 ]
 
@@ -72,7 +70,7 @@ export default function Navigation() {
               onClick={(e) => handleNavClick(e, '#contact')}
               className="px-5 py-2.5 bg-gradient-to-r from-accent-600 to-accent-700 text-white rounded-xl hover:from-accent-700 hover:to-accent-800 transition-all duration-300 text-sm font-bold shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-accent-500 focus:ring-offset-2"
             >
-              Book Consult
+              Free AI Review
             </a>
           </div>
 
@@ -104,7 +102,7 @@ export default function Navigation() {
               onClick={(e) => handleNavClick(e, '#contact')}
               className="block px-4 py-3 bg-gradient-to-r from-accent-600 to-accent-700 text-white rounded-xl hover:from-accent-700 hover:to-accent-800 transition-all duration-300 text-center font-bold mt-4 shadow-lg"
             >
-              Book Consult
+              Free AI Review
             </a>
           </div>
         )}

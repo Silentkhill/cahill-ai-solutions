@@ -93,7 +93,7 @@ export default function Services() {
   }
 
   return (
-    <section id="services" className="section-padding bg-gradient-to-b from-white via-navy-50/30 to-white relative overflow-hidden">
+    <section id="pricing" className="section-padding bg-gradient-to-b from-white via-navy-50/30 to-white relative overflow-hidden">
       {/* Creative background */}
       <div className="absolute inset-0">
         <div className="blob-bg w-[700px] h-[700px] bg-accent-100/10 absolute top-1/4 -right-64"></div>

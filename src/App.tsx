@@ -1,12 +1,11 @@
 import { useState, useEffect } from 'react'
 import Navigation from './components/Navigation'
 import Hero from './components/Hero'
+import WhoThisIsFor from './components/WhoThisIsFor'
 import Benefits from './components/Benefits'
-import TrustSignals from './components/TrustSignals'
 import HowItWorks from './components/HowItWorks'
 import Services from './components/Services'
 import MonthlyInsights from './components/MonthlyInsights'
-import UseCases from './components/UseCases'
 import About from './components/About'
 import FAQ from './components/FAQ'
 import Contact from './components/Contact'
@@ -35,12 +34,11 @@ function App() {
       <Navigation />
       <main id="main-content">
         <Hero />
-        <TrustSignals />
+        <WhoThisIsFor />
         <Benefits />
         <HowItWorks />
         <Services />
         <MonthlyInsights />
-        <UseCases />
         <About />
         <FAQ />
         <Contact />
@@ -52,4 +50,3 @@ function App() {
 }
 
 export default App
-

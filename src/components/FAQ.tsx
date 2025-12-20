@@ -3,36 +3,20 @@ import { ChevronDown, HelpCircle } from 'lucide-react'
 
 const faqs = [
   {
-    question: 'What exactly do you mean by "AI solutions"?',
-    answer: 'We set up practical AI tools that help with everyday tasks: chatbots for your website, email automation, content creation assistance, and simple analytics. We focus on tools that save you time and improve your marketing—not complex systems that require training.',
+    question: 'Do I need to understand AI?',
+    answer: 'No. I handle the systems, you get the results.',
   },
   {
-    question: 'How long does setup take?',
-    answer: 'Most one-time setups are completed within 1–2 weeks, depending on the package. We\'ll work around your schedule and make sure your team is comfortable with everything before we finish.',
+    question: 'Will this replace my staff?',
+    answer: 'No. AI supports people — it does not replace them.',
   },
   {
-    question: 'What do I need to provide?',
-    answer: 'We\'ll need access to your website (if you have one), your business information, and a clear idea of what you want to improve. We can work with what you have—even if you don\'t have a website yet, we can help build one as part of the setup.',
+    question: 'Can you work with my existing website or tools?',
+    answer: 'Yes. No rebuild required.',
   },
   {
-    question: 'Is my data private and secure?',
-    answer: 'Yes. We use reputable AI tools with strong privacy policies, and we never share your business information. We\'ll explain exactly what data is used and how it\'s protected before we set anything up.',
-  },
-  {
-    question: 'Can I cancel the monthly plan anytime?',
-    answer: 'Yes. There are no long-term contracts. You can cancel your monthly plan at any time with 30 days notice.',
-  },
-  {
-    question: 'Do you work with businesses outside Toronto?',
-    answer: 'We primarily serve Toronto and the Greater Toronto Area (GTA). If you\'re nearby and think we\'d be a good fit, reach out and we can discuss.',
-  },
-  {
-    question: 'What if AI isn\'t right for my business?',
-    answer: 'That\'s okay. Even if we decide AI isn\'t the best fit right now, you\'ll still leave our consultation with 2–3 practical suggestions for improving your website or marketing. No pressure.',
-  },
-  {
-    question: 'Do you build websites, or just add AI to existing ones?',
-    answer: 'We can do both. If you need a website or a refresh, we can build that as part of your implementation package. AI solutions are our focus, but a good website is often the foundation for effective AI tools.',
+    question: 'Is this a long-term commitment?',
+    answer: 'No. Monthly plans are flexible.',
   },
 ]
 
@@ -57,12 +41,11 @@ export default function FAQ() {
             <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-accent-100 to-accent-200 rounded-3xl mb-6 shadow-2xl">
               <HelpCircle className="text-accent-700" size={40} />
             </div>
-            <h2 className="text-5xl sm:text-6xl font-black text-navy-900 mb-4">
-              Frequently Asked{' '}
-              <span className="text-gradient">Questions</span>
+            <h2 className="text-4xl sm:text-5xl font-black text-navy-900 mb-4">
+              Frequently Asked Questions
             </h2>
-            <p className="text-xl text-navy-700 max-w-2xl mx-auto font-light">
-              Common questions from business owners like you.
+            <p className="text-lg text-navy-700 max-w-2xl mx-auto font-light">
+              Objection removal — common questions from business owners like you.
             </p>
           </div>
 
@@ -111,22 +94,6 @@ export default function FAQ() {
                 </div>
               </div>
             ))}
-          </div>
-          
-          {/* Creative CTA */}
-          <div className="mt-16 text-center">
-            <div className="inline-block p-8 bg-gradient-to-br from-navy-900 to-navy-800 rounded-3xl shadow-2xl text-white">
-              <p className="text-xl font-bold mb-4">
-                Still have questions?
-              </p>
-              <a
-                href="#contact"
-                className="inline-flex items-center gap-3 px-8 py-4 bg-white text-navy-900 rounded-xl font-bold hover:bg-accent-50 transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1"
-              >
-                <span>Get in Touch</span>
-                <ChevronDown size={20} className="rotate-[-90deg]" />
-              </a>
-            </div>
           </div>
         </div>
       </div>

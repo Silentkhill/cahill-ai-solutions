@@ -2,26 +2,26 @@ import { Search, Wrench, BarChart3, ArrowRight } from 'lucide-react'
 
 const steps = [
   {
-    number: '01',
+    number: '1',
     icon: Search,
-    title: 'We Review Your Needs',
-    description: 'We start with a free 15-minute conversation to understand your business, your goals, and where AI can help most.',
+    title: 'Discover',
+    description: 'We review your business workflow, goals, and pain points.',
     color: 'from-blue-500 to-blue-600',
     bgColor: 'bg-blue-50',
   },
   {
-    number: '02',
+    number: '2',
     icon: Wrench,
-    title: 'AI Foundations Setup',
-    description: 'We implement the right AI workflows for your business—identifying opportunities, setting up internal and external workflows, and providing training.',
+    title: 'Implement',
+    description: 'We set up practical AI systems tailored to your business.',
     color: 'from-accent-500 to-accent-600',
     bgColor: 'bg-accent-50',
   },
   {
-    number: '03',
+    number: '3',
     icon: BarChart3,
-    title: 'AI Operations (Monthly)',
-    description: 'Each month, we make predictable improvements, share insights, and continuously optimize how AI supports your work. No hourly billing—just consistent value.',
+    title: 'Improve Monthly',
+    description: 'We review results, refine systems, and suggest improvements.',
     color: 'from-purple-500 to-purple-600',
     bgColor: 'bg-purple-50',
   },
@@ -38,16 +38,12 @@ export default function HowItWorks() {
       
       <div className="container-custom relative z-10">
         <div className="text-center mb-20">
-          <div className="inline-block mb-4">
-            <span className="text-5xl sm:text-6xl font-black text-navy-900 block">How It</span>
-            <span className="text-5xl sm:text-6xl font-black text-gradient block">Works</span>
-          </div>
-          <p className="text-xl text-navy-700 max-w-3xl mx-auto font-light mt-4">
-            A simple, practical process: AI Foundations (one-time) → AI Operations (monthly).
-          </p>
+          <h2 className="text-4xl sm:text-5xl font-black text-navy-900 mb-6">
+            How It Works
+          </h2>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 lg:gap-12 relative">
+        <div className="grid md:grid-cols-3 gap-8 lg:gap-12 relative max-w-5xl mx-auto mb-12">
           {/* Creative connecting line */}
           <div className="hidden md:block absolute top-24 left-0 right-0 h-1 bg-gradient-to-r from-blue-200 via-accent-200 to-purple-200 opacity-30"></div>
           
@@ -73,13 +69,10 @@ export default function HowItWorks() {
                         <div className="absolute inset-0 bg-gradient-to-br from-white/40 to-transparent"></div>
                         <Icon className="text-white relative z-10" size={40} />
                       </div>
-                      {/* Floating decorative elements */}
-                      <div className={`absolute -top-2 -right-2 w-6 h-6 bg-gradient-to-br ${step.color} rounded-full blur-sm animate-pulse-creative`}></div>
-                      <div className={`absolute -bottom-2 -left-2 w-4 h-4 bg-gradient-to-br ${step.color} rounded-full blur-sm animate-pulse-creative`} style={{ animationDelay: '1s' }}></div>
                     </div>
                     
                     <h3 className="text-3xl font-black text-navy-900 mb-5 group-hover:text-gradient transition-colors duration-300 relative z-10">
-                      {step.title}
+                      Step {step.number} — {step.title}
                     </h3>
                     <p className="text-navy-700 leading-relaxed text-lg relative z-10">
                       {step.description}
@@ -105,19 +98,12 @@ export default function HowItWorks() {
           })}
         </div>
         
-        {/* Creative CTA */}
-        <div className="mt-20 text-center">
-          <div className="inline-block p-8 bg-white/80 backdrop-blur-sm rounded-3xl shadow-2xl border-2 border-navy-100">
-            <p className="text-xl font-bold text-navy-900 mb-4">
-              Ready to get started?
+        {/* Important line */}
+        <div className="text-center max-w-3xl mx-auto">
+          <div className="inline-block p-6 bg-white/80 backdrop-blur-sm rounded-2xl border-2 border-navy-100 shadow-xl">
+            <p className="text-lg text-navy-700 font-medium">
+              No long contracts. No confusing tools. Clear communication at every step.
             </p>
-            <a
-              href="#contact"
-              className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-accent-600 to-accent-700 text-white rounded-xl font-bold hover:from-accent-700 hover:to-accent-800 transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1"
-            >
-              <span>Book Your Free Consult</span>
-              <ArrowRight size={20} />
-            </a>
           </div>
         </div>
       </div>
