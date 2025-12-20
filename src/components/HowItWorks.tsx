@@ -12,16 +12,16 @@ const steps = [
   {
     number: '02',
     icon: Wrench,
-    title: 'We Set It Up',
-    description: 'We implement the right AI tools for your business, train your team, and make sure everything works smoothly.',
+    title: 'AI Foundations Setup',
+    description: 'We implement the right AI workflows for your business—identifying opportunities, setting up internal and external workflows, and providing training.',
     color: 'from-accent-500 to-accent-600',
     bgColor: 'bg-accent-50',
   },
   {
     number: '03',
     icon: BarChart3,
-    title: 'We Keep Improving',
-    description: 'Each month, we review your results, share insights, and make small improvements that add up over time.',
+    title: 'AI Operations (Monthly)',
+    description: 'Each month, we make predictable improvements, share insights, and continuously optimize how AI supports your work. No hourly billing—just consistent value.',
     color: 'from-purple-500 to-purple-600',
     bgColor: 'bg-purple-50',
   },
@@ -43,7 +43,7 @@ export default function HowItWorks() {
             <span className="text-5xl sm:text-6xl font-black text-gradient block">Works</span>
           </div>
           <p className="text-xl text-navy-700 max-w-3xl mx-auto font-light mt-4">
-            A simple, practical process designed for busy business owners.
+            A simple, practical process: AI Foundations (one-time) → AI Operations (monthly).
           </p>
         </div>
 

@@ -1,31 +1,33 @@
-import { Check, Sparkles, Zap, Rocket } from 'lucide-react'
+import { Check, Sparkles, Building2, Settings } from 'lucide-react'
 
-const oneTimePackages = [
+const aiFoundations = [
   {
-    name: 'Launch Package',
+    name: 'AI Foundations',
     price: '$750',
-    description: 'Perfect for getting started',
-    icon: Zap,
+    description: 'Focused setup (1–2 workflows)',
+    icon: Building2,
     features: [
-      '1-page website or small site refresh',
-      'Basic AI tool setup (chatbot, email automation, or content tools)',
-      'Team training session (up to 3 people)',
-      '30 days of email support',
+      'Business workflow review (admin, marketing, communication)',
+      'Identification of 3–5 AI opportunities',
+      'Setup of 1 internal workflow (admin or communication)',
+      'Setup of 1 external workflow (content, reviews, website copy)',
+      'Simple documentation or walkthrough',
+      'Optional: short training session (recorded or live)',
     ],
     color: 'from-blue-500 to-blue-600',
     bgColor: 'bg-blue-50',
   },
   {
-    name: 'Growth Package',
+    name: 'AI Foundations Plus',
     price: '$1,400',
-    description: 'For businesses ready to scale',
-    icon: Rocket,
+    description: 'Broader setup (3–5 workflows + first insight report)',
+    icon: Building2,
     features: [
-      'Multi-section website or full site refresh',
-      'Advanced AI implementation (multiple tools)',
-      'Conversion optimization',
-      'Extended team training (up to 5 people)',
-      '60 days of email support',
+      'Everything in AI Foundations',
+      'Setup of 3–5 AI workflows (internal + external)',
+      'First monthly insight report included',
+      'Extended documentation and training',
+      'Priority support during setup',
     ],
     color: 'from-accent-500 to-accent-600',
     bgColor: 'bg-accent-50',
@@ -33,47 +35,51 @@ const oneTimePackages = [
   },
 ]
 
-const monthlyPlans = [
+const aiOperations = [
   {
-    name: 'Care Plan Starter',
+    name: 'AI Operations – Core',
     price: '$99',
     period: '/month',
-    description: 'Essential monthly support',
+    description: 'Essential monthly improvements',
+    improvements: '2 AI-related improvements per month',
     features: [
-      'Monthly AI insights report',
-      '3–5 actionable recommendations',
+      'Monthly AI check-in',
+      '2 AI-related improvements per month',
+      'Monthly plain-language insights summary',
       'Email support',
-      'Small website tweaks',
     ],
+    bestFor: 'Solo owners, very small teams',
     color: 'from-green-500 to-green-600',
   },
   {
-    name: 'Care Plan Plus',
+    name: 'AI Operations – Growth',
     price: '$149',
     period: '/month',
     description: 'More hands-on support',
+    improvements: '4 AI-related improvements per month',
     features: [
-      'Everything in Starter',
-      'Priority email support',
-      'Monthly content updates',
-      'SEO basics implementation',
-      'Google Business Profile optimization',
+      'Everything in Core',
+      '4 AI-related improvements per month',
+      'Content or communication support',
+      'Priority response',
     ],
+    bestFor: 'Growing local businesses, owners who want consistency',
     color: 'from-accent-500 to-accent-600',
     popular: true,
   },
   {
-    name: 'Care Plan Pro',
+    name: 'AI Operations – Partner',
     price: '$249',
     period: '/month',
     description: 'Comprehensive monthly care',
+    improvements: '8 AI-related improvements per month',
     features: [
-      'Everything in Plus',
-      'Advanced analytics review',
-      'Conversion optimization',
-      'Content strategy support',
-      'Quarterly strategy session',
+      'Everything in Growth',
+      '8 AI-related improvements per month',
+      'Custom workflows',
+      'Monthly planning support',
     ],
+    bestFor: 'Businesses that want ongoing optimization, long-term partners',
     color: 'from-purple-500 to-purple-600',
   },
 ]
@@ -98,27 +104,30 @@ export default function Services() {
         <div className="text-center mb-20">
           <div className="inline-flex items-center gap-3 mb-6">
             <Sparkles className="text-accent-600 w-8 h-8" />
-            <span className="text-5xl sm:text-6xl font-black text-navy-900">Services &</span>
-            <span className="text-5xl sm:text-6xl font-black text-gradient">Packages</span>
+            <span className="text-5xl sm:text-6xl font-black text-navy-900">Two Simple</span>
+            <span className="text-5xl sm:text-6xl font-black text-gradient">Offerings</span>
           </div>
           <p className="text-xl text-navy-700 max-w-3xl mx-auto font-light">
-            Choose what fits your business. All packages include AI setup and training.
+            We help businesses set up AI properly, then continuously improve how it supports their work.
           </p>
         </div>
 
-        {/* One-Time Packages */}
+        {/* AI Foundations (One-Time) */}
         <div className="mb-32">
           <div className="text-center mb-12">
-            <h3 className="text-3xl font-black text-navy-900 mb-3">
-              One-Time Setup & Implementation
+            <h3 className="text-4xl font-black text-navy-900 mb-4">
+              AI Foundations
             </h3>
-            <p className="text-lg text-navy-600">
-              Starting at <span className="font-bold text-accent-600">$750</span>. All packages include AI setup, training, and support.
+            <p className="text-xl text-navy-700 max-w-3xl mx-auto font-light mb-2">
+              Your entry point. A structured AI onboarding for your business.
+            </p>
+            <p className="text-lg text-navy-600 max-w-2xl mx-auto">
+              We show you where AI fits in your business and set it up properly.
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            {oneTimePackages.map((pkg, index) => {
+          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto mb-12">
+            {aiFoundations.map((pkg, index) => {
               const Icon = pkg.icon
               return (
                 <div
@@ -178,22 +187,54 @@ export default function Services() {
           </div>
         </div>
 
-        {/* Monthly Plans */}
+        {/* AI Operations (Monthly) */}
         <div>
           <div className="text-center mb-12">
             <div className="inline-flex items-center gap-3 mb-4">
-              <Sparkles className="text-accent-600 w-7 h-7" />
-              <h3 className="text-3xl font-black text-navy-900">
-                Monthly AI Support & Optimization
+              <Settings className="text-accent-600 w-8 h-8" />
+              <h3 className="text-4xl font-black text-navy-900">
+                AI Operations
               </h3>
             </div>
-            <p className="text-lg text-navy-700 max-w-3xl mx-auto">
-              Small improvements each month that add up over time. No hourly billing—just consistent value.
+            <p className="text-xl text-navy-700 max-w-3xl mx-auto font-light mb-4">
+              This is where we fix things the most. Instead of vague "support", we sell capacity.
+            </p>
+            <p className="text-lg text-navy-600 max-w-2xl mx-auto">
+              Predictable cost. Predictable output. Ongoing thinking, not just setup.
+            </p>
+          </div>
+          
+          {/* What is an "AI-related improvement" */}
+          <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 mb-12 border-2 border-navy-100 shadow-xl max-w-4xl mx-auto">
+            <h4 className="text-2xl font-black text-navy-900 mb-4">What is an "AI-related improvement"?</h4>
+            <p className="text-navy-700 text-base leading-relaxed mb-4">
+              An improvement can include:
+            </p>
+            <ul className="space-y-2 text-navy-700">
+              <li className="flex items-start gap-3">
+                <span className="text-accent-600 font-bold mt-1">•</span>
+                <span>Updating or refining an AI workflow</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-accent-600 font-bold mt-1">•</span>
+                <span>Generating or improving content</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-accent-600 font-bold mt-1">•</span>
+                <span>Adjusting prompts or automations</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-accent-600 font-bold mt-1">•</span>
+                <span>Creating summaries, reports, or recommendations</span>
+              </li>
+            </ul>
+            <p className="text-navy-600 text-sm italic mt-4 pt-4 border-t border-navy-100">
+              Large projects are scoped separately.
             </p>
           </div>
           
           <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-            {monthlyPlans.map((plan, index) => (
+            {aiOperations.map((plan, index) => (
               <div
                 key={index}
                 className={`relative group card-creative bg-white p-8 stagger-animation ${
@@ -217,10 +258,15 @@ export default function Services() {
                     </span>
                     <span className="text-navy-600 font-medium">{plan.period}</span>
                   </div>
+                  <div className="mb-3">
+                    <div className="inline-block px-4 py-2 bg-gradient-to-br from-accent-50 to-accent-100 rounded-lg border border-accent-200">
+                      <span className="text-sm font-bold text-accent-900">{plan.improvements}</span>
+                    </div>
+                  </div>
                   <p className="text-base text-navy-600 font-medium">{plan.description}</p>
                 </div>
                 
-                <ul className="space-y-3 mb-8">
+                <ul className="space-y-3 mb-6">
                   {plan.features.map((feature, idx) => (
                     <li key={idx} className="flex items-start gap-2">
                       <div className={`w-5 h-5 bg-gradient-to-br ${plan.color} rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5`}>
@@ -230,6 +276,11 @@ export default function Services() {
                     </li>
                   ))}
                 </ul>
+                
+                <div className="mb-6 pt-4 border-t border-navy-100">
+                  <p className="text-xs text-navy-600 font-medium mb-1">Best for:</p>
+                  <p className="text-sm text-navy-700">{plan.bestFor}</p>
+                </div>
                 
                 <button
                   onClick={scrollToContact}

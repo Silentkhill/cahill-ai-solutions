@@ -75,19 +75,17 @@ export default function Hero() {
           {/* Creative headline with mixed typography */}
           <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-navy-900 mb-8 leading-[0.95] tracking-tight">
             <span className="block mb-2">
-              <span className="text-gradient">AI</span> That Actually
+              Practical <span className="text-gradient">AI</span>, Clearly
             </span>
             <span className="block">
-              <span className="inline-block transform -rotate-2 hover:rotate-2 transition-transform duration-300">Works</span>
-              {' '}for Your{' '}
-              <span className="inline-block transform rotate-2 hover:-rotate-2 transition-transform duration-300 underline-creative">Business</span>
+              <span className="inline-block transform -rotate-2 hover:rotate-2 transition-transform duration-300">Explained</span>
             </span>
           </h1>
           
           {/* Creative subheadline */}
           <div className="max-w-3xl mb-12 space-y-4">
             <p className="text-2xl sm:text-3xl md:text-4xl text-navy-700 leading-tight font-light">
-              We set up practical AI tools, then keep improving them every month.
+              We help businesses set up AI properly, then continuously improve how it supports their work.
             </p>
             <p className="text-lg sm:text-xl text-navy-600 leading-relaxed">
               No hype. No overwhelm. Just tools that save you time and help you make better decisions.
