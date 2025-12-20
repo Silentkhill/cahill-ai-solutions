@@ -68,16 +68,20 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="section-padding bg-white">
-      <div className="container-custom">
+    <section id="contact" className="section-padding bg-white relative">
+      {/* Final clarity - noise fully resolved */}
+      <div className="noise-layer" style={{ opacity: 0.05 }} />
+      
+      <div className="container-custom relative z-10">
         <div className="max-w-2xl mx-auto">
-          <div className="text-center mb-10">
-            <h2 className="text-3xl sm:text-4xl font-bold text-navy-900 mb-4">
+          {/* Asymmetric headline */}
+          <div className="asymmetric-right mb-12">
+            <h2 className="text-headline text-navy-900 mb-4">
               Get Your Free AI Opportunity Review
             </h2>
           </div>
 
-          <div className="card-simple p-8">
+          <div className="card-focused p-10">
             <form onSubmit={handleSubmit} className="space-y-6" noValidate>
               <div>
                 <label htmlFor="name" className="block text-sm font-semibold text-navy-900 mb-2">

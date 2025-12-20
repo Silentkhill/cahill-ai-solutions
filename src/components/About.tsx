@@ -1,57 +1,72 @@
-import { Shield, MessageCircle, User, MapPin } from 'lucide-react'
+import { Lightbulb, Heart, Shield } from 'lucide-react'
 
-const trustBullets = [
+// Philosophy-driven About - focus on approach and thinking, not credentials
+const philosophy = [
+  {
+    icon: Lightbulb,
+    principle: 'Clarity over complexity',
+    explanation: 'I translate complex ideas into clear, practical steps. No jargon. No overwhelm.',
+  },
+  {
+    icon: Heart,
+    principle: 'People over technology',
+    explanation: 'AI supports people—it doesn\'t replace them. Every solution starts with understanding your actual needs.',
+  },
   {
     icon: Shield,
-    title: 'Practical, not experimental',
-  },
-  {
-    icon: MessageCircle,
-    title: 'Ethical and privacy-conscious',
-  },
-  {
-    icon: User,
-    title: 'Clear communication',
-  },
-  {
-    icon: MapPin,
-    title: 'Local and relationship-driven',
+    principle: 'Responsible use',
+    explanation: 'I prioritize ethical AI use and privacy. You\'ll always know what data is used and how it\'s protected.',
   },
 ]
 
 export default function About() {
   return (
-    <section id="about" className="section-padding bg-white">
+    <section id="about" className="section-padding bg-subtle relative">
       <div className="container-custom">
-        <div className="max-w-3xl mx-auto">
-          <div className="text-center mb-10">
-            <h2 className="text-3xl sm:text-4xl font-bold text-navy-900 mb-4">
-              Human-First AI, Explained Clearly
+        <div className="max-w-4xl mx-auto">
+          {/* Philosophy-first headline */}
+          <div className="asymmetric-right mb-16">
+            <h2 className="text-headline text-navy-900 mb-4">
+              How I Think About This Work
             </h2>
-          </div>
-
-          <div className="card-simple p-8 mb-10">
-            <p className="text-lg text-navy-700 leading-relaxed">
-              I am a teacher and AI Committee Lead, focused on helping people understand and use AI responsibly and effectively. I bring that same clarity-first approach to helping small businesses use AI in ways that genuinely save time and reduce stress.
+            <p className="text-subhead max-w-2xl">
+              Not credentials. Not tools. Just the principles that guide how I help businesses.
             </p>
           </div>
-          
-          {/* Trust bullets */}
-          <div className="grid sm:grid-cols-2 gap-4">
-            {trustBullets.map((bullet, index) => {
-              const Icon = bullet.icon
+
+          {/* Philosophy principles */}
+          <div className="space-y-8 mb-12">
+            {philosophy.map((item, index) => {
+              const Icon = item.icon
               return (
                 <div
                   key={index}
-                  className="card-simple p-6 text-center"
+                  className="card-focused p-8 fade-in-slow"
+                  style={{ animationDelay: `${index * 200}ms` }}
                 >
-                  <div className="w-12 h-12 bg-accent-100 rounded-lg flex items-center justify-center mx-auto mb-3">
-                    <Icon className="text-accent-600" size={24} />
+                  <div className="flex items-start gap-6">
+                    <div className="w-14 h-14 bg-accent-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <Icon className="text-accent-600" size={28} />
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="text-xl font-bold text-navy-900 mb-2">
+                        {item.principle}
+                      </h3>
+                      <p className="text-base text-navy-700 leading-relaxed">
+                        {item.explanation}
+                      </p>
+                    </div>
                   </div>
-                  <h3 className="font-semibold text-navy-900 text-sm">{bullet.title}</h3>
                 </div>
               )
             })}
+          </div>
+
+          {/* Personal note - human, not promotional */}
+          <div className="card-focused p-8 bg-navy-50/50">
+            <p className="text-base text-navy-700 leading-relaxed">
+              I'm a teacher and AI Committee Lead, which means I spend my days helping people understand and use AI responsibly. When I work with small businesses in Toronto, I bring that same clarity-first approach: practical solutions that genuinely save time and reduce stress.
+            </p>
           </div>
         </div>
       </div>

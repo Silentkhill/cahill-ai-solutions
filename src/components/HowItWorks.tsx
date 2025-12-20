@@ -23,26 +23,29 @@ const steps = [
 
 export default function HowItWorks() {
   return (
-    <section id="how-it-works" className="section-padding bg-subtle">
+    <section id="how-it-works" className="section-padding bg-white relative">
       <div className="container-custom">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl sm:text-4xl font-bold text-navy-900 mb-4">
+        {/* Asymmetric headline */}
+        <div className="asymmetric-right mb-16 max-w-3xl">
+          <h2 className="text-headline text-navy-900 mb-4">
             How It Works
           </h2>
-          <p className="text-lg text-navy-700 max-w-2xl mx-auto">
+          <p className="text-subhead">
             A simple, practical process: AI Foundations (one-time) → AI Operations (monthly).
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto mb-10">
+        {/* Steps - clean, not decorative */}
+        <div className="grid md:grid-cols-3 gap-10 max-w-4xl mx-auto mb-12">
           {steps.map((step, index) => {
             const Icon = step.icon
             return (
               <div
                 key={index}
-                className="text-center"
+                className="fade-in-slow"
+                style={{ animationDelay: `${index * 200}ms` }}
               >
-                <div className="w-16 h-16 bg-accent-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+                <div className="w-14 h-14 bg-accent-100 rounded-lg flex items-center justify-center mb-5">
                   <Icon className="text-accent-600" size={28} />
                 </div>
                 <div className="text-sm font-semibold text-accent-600 mb-2">
@@ -59,10 +62,10 @@ export default function HowItWorks() {
           })}
         </div>
         
-        {/* Important line */}
-        <div className="text-center max-w-2xl mx-auto">
-          <div className="bg-white rounded-lg p-6 border border-navy-100">
-            <p className="text-base text-navy-700 font-medium">
+        {/* Important reassurance - not decorative */}
+        <div className="max-w-2xl mx-auto">
+          <div className="card-focused p-6 bg-navy-50/50">
+            <p className="text-base text-navy-700 font-medium text-center">
               No long contracts. No confusing tools. Clear communication at every step.
             </p>
           </div>

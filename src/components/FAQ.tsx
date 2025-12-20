@@ -28,14 +28,18 @@ export default function FAQ() {
   }
 
   return (
-    <section id="faq" className="section-padding bg-subtle">
-      <div className="container-custom">
+    <section id="faq" className="section-padding bg-subtle relative">
+      {/* Noise layer clears as you reach FAQ */}
+      <div className="noise-layer clarity" />
+      
+      <div className="container-custom relative z-10">
         <div className="max-w-3xl mx-auto">
-          <div className="text-center mb-10">
-            <h2 className="text-3xl sm:text-4xl font-bold text-navy-900 mb-4">
+          {/* Asymmetric headline */}
+          <div className="asymmetric-left mb-12">
+            <h2 className="text-headline text-navy-900 mb-4">
               Frequently Asked Questions
             </h2>
-            <p className="text-base text-navy-700">
+            <p className="text-subhead max-w-2xl">
               Common questions from business owners like you.
             </p>
           </div>
@@ -44,7 +48,7 @@ export default function FAQ() {
             {faqs.map((faq, index) => (
               <div
                 key={index}
-                className={`card-simple overflow-hidden ${
+                className={`card-focused overflow-hidden transition-all duration-500 ${
                   openIndex === index ? 'border-accent-200' : ''
                 }`}
               >
@@ -52,13 +56,13 @@ export default function FAQ() {
                   onClick={() => toggleFAQ(index)}
                   aria-expanded={openIndex === index}
                   aria-controls={`faq-answer-${index}`}
-                  className="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-navy-50 transition-colors"
+                  className="w-full px-6 py-5 text-left flex items-center justify-between hover:bg-navy-50 transition-colors duration-300"
                 >
                   <span className="font-semibold text-navy-900 pr-4">
                     {faq.question}
                   </span>
                   <ChevronDown
-                    className={`text-navy-600 flex-shrink-0 transition-transform ${
+                    className={`text-navy-600 flex-shrink-0 transition-transform duration-500 ${
                       openIndex === index ? 'rotate-180' : ''
                     }`}
                     size={20}
@@ -67,12 +71,12 @@ export default function FAQ() {
                 </button>
                 <div
                   id={`faq-answer-${index}`}
-                  className={`overflow-hidden transition-all ${
+                  className={`overflow-hidden transition-all duration-500 ${
                     openIndex === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
                   }`}
                   role="region"
                 >
-                  <div className="px-6 py-4 bg-navy-50 border-t border-navy-100">
+                  <div className="px-6 py-5 bg-navy-50 border-t border-navy-100">
                     <p className="text-sm text-navy-700 leading-relaxed">{faq.answer}</p>
                   </div>
                 </div>

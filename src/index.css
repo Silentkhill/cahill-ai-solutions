@@ -14,12 +14,10 @@
     -moz-osx-font-smoothing: grayscale;
   }
   
-  /* Improved focus indicators */
   *:focus-visible {
     @apply outline-none ring-2 ring-accent-500 ring-offset-2;
   }
   
-  /* Screen reader only class */
   .sr-only {
     position: absolute;
     width: 1px;
@@ -46,21 +44,61 @@
 }
 
 @layer utilities {
-  /* Simplified section padding - more breathing room */
   .section-padding {
-    @apply py-16 md:py-24 lg:py-32;
+    @apply py-20 md:py-28 lg:py-36;
   }
   
   .container-custom {
-    @apply max-w-5xl mx-auto px-4 sm:px-6 lg:px-8;
+    @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8;
   }
   
-  /* Simple, calm backgrounds */
   .bg-subtle {
-    @apply bg-navy-50/30;
+    @apply bg-navy-50/20;
   }
   
-  /* Simple text gradient - no animation */
+  /* Signal Through Noise - visual noise that resolves */
+  .noise-layer {
+    position: absolute;
+    inset: 0;
+    opacity: 0.4;
+    background-image: 
+      radial-gradient(circle at 20% 30%, rgba(16, 42, 67, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 80% 70%, rgba(249, 115, 22, 0.08) 0%, transparent 50%),
+      radial-gradient(circle at 50% 50%, rgba(16, 42, 67, 0.05) 0%, transparent 70%);
+    pointer-events: none;
+    transition: opacity 0.8s ease-out;
+  }
+  
+  .noise-layer.clarity {
+    opacity: 0.1;
+  }
+  
+  /* Purposeful motion - slow and meaningful */
+  @keyframes fadeInSlow {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .fade-in-slow {
+    animation: fadeInSlow 1.2s ease-out;
+  }
+  
+  /* Asymmetric layouts */
+  .asymmetric-left {
+    @apply ml-0 md:ml-8 lg:ml-16;
+  }
+  
+  .asymmetric-right {
+    @apply mr-0 md:mr-8 lg:mr-16;
+  }
+  
+  /* Text gradient - subtle */
   .text-gradient {
     background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
     -webkit-background-clip: text;
@@ -68,23 +106,42 @@
     background-clip: text;
   }
   
-  /* Simple card - minimal effects */
-  .card-simple {
-    @apply bg-white rounded-xl shadow-sm border border-navy-100;
-    transition: all 0.2s ease;
+  /* Card with intentional focus */
+  .card-focused {
+    @apply bg-white rounded-lg border border-navy-100;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   }
   
-  .card-simple:hover {
-    @apply shadow-md border-navy-200;
-    transform: translateY(-2px);
+  .card-focused:hover {
+    @apply border-navy-200 shadow-lg;
+    transform: translateY(-4px);
   }
   
-  /* Simple button styles */
+  /* Button with purposeful interaction */
   .btn-primary {
-    @apply px-8 py-4 bg-accent-600 text-white rounded-lg font-semibold hover:bg-accent-700 transition-colors focus:outline-none focus:ring-2 focus:ring-accent-500 focus:ring-offset-2;
+    @apply px-8 py-4 bg-accent-600 text-white rounded-lg font-semibold transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-accent-500 focus:ring-offset-2;
+  }
+  
+  .btn-primary:hover {
+    @apply bg-accent-700;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(249, 115, 22, 0.2);
   }
   
   .btn-secondary {
-    @apply px-8 py-4 bg-white text-accent-600 border-2 border-accent-600 rounded-lg font-semibold hover:bg-accent-50 transition-colors focus:outline-none focus:ring-2 focus:ring-accent-500 focus:ring-offset-2;
+    @apply px-8 py-4 bg-white text-accent-600 border-2 border-accent-600 rounded-lg font-semibold transition-all duration-300 hover:bg-accent-50 focus:outline-none focus:ring-2 focus:ring-accent-500 focus:ring-offset-2;
+  }
+  
+  /* Typography scale - intentional hierarchy */
+  .text-display {
+    @apply text-5xl sm:text-6xl md:text-7xl font-bold leading-[1.05] tracking-tight;
+  }
+  
+  .text-headline {
+    @apply text-3xl sm:text-4xl md:text-5xl font-bold leading-tight;
+  }
+  
+  .text-subhead {
+    @apply text-xl sm:text-2xl text-navy-700 font-light leading-relaxed;
   }
 }
