@@ -11,7 +11,6 @@ import FAQ from './components/FAQ'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 import BackToTop from './components/BackToTop'
-import VoiceAgent from './components/VoiceAgent'
 
 function App() {
   const [showBackToTop, setShowBackToTop] = useState(false)
@@ -46,11 +45,7 @@ function App() {
       </main>
       <Footer />
       {showBackToTop && <BackToTop />}
-      {/* ElevenLabs Voice Agent */}
-      <VoiceAgent 
-        widgetUrl="https://elevenlabs.io/convai/agent/agent_4701kd3fdx78fcs8ddsxsh69bzgx"
-        position="bottom-right"
-      />
+      {/* ElevenLabs Voice Agent - Script loaded in index.html */}
     </div>
   )
 }
