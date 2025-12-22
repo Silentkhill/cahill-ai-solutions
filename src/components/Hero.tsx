@@ -68,7 +68,7 @@ export default function Hero() {
             </h1>
             
             <p className="text-subhead max-w-3xl mb-12 text-navy-600">
-              Save time, improve marketing, and make smarter decisions — without hype or technical overwhelm.
+              Save time, improve marketing, and make smarter decisions without hype or technical overwhelm.
             </p>
             
             {/* Enhanced CTA section */}

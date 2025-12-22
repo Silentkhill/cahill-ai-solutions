@@ -8,7 +8,7 @@ const faqs = [
   },
   {
     question: 'Will this replace my staff?',
-    answer: 'No. AI supports people — it does not replace them.',
+    answer: 'No. AI supports people - it does not replace them.',
   },
   {
     question: 'Can you work with my existing website or tools?',

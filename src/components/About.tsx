@@ -10,7 +10,7 @@ const philosophy = [
   {
     icon: Heart,
     principle: 'People over technology',
-    explanation: 'AI supports people—it doesn\'t replace them. Every solution starts with understanding your actual needs.',
+    explanation: 'AI supports people - it doesn\'t replace them. Every solution starts with understanding your actual needs.',
   },
   {
     icon: Shield,

@@ -5,6 +5,7 @@ export default function WhoThisIsFor() {
     'Cafés & Restaurants',
     'Trades & Services',
     'Schools & Education',
+    'Retail & Local Shops',
   ]
 
   return (
@@ -20,11 +21,11 @@ export default function WhoThisIsFor() {
               Who This Is For
             </h2>
             <p className="text-subhead max-w-2xl">
-              Cahill AI Solutions works best with owner-led local businesses that want practical improvements — not experimental tech.
+              Cahill AI Solutions works best with owner-led local businesses that want practical improvements, not experimental tech.
             </p>
           </div>
           
-          {/* Simple, clean grid */}
+          {/* Simple, clean grid - now 6 items for uniform layout */}
           <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 mb-10">
             {businessTypes.map((type, index) => (
               <div
@@ -40,7 +41,7 @@ export default function WhoThisIsFor() {
           {/* Bottom line - clear and direct */}
           <div className="card-focused p-6 bg-white">
             <p className="text-base text-navy-700 leading-relaxed">
-              If you are <span className="font-semibold text-navy-900">busy, non-technical, and want simple systems that work</span> — this is for you.
+              If you are <span className="font-semibold text-navy-900">busy, non-technical, and want simple systems that work</span>, this is for you.
             </p>
           </div>
         </div>

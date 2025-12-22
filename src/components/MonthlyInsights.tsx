@@ -40,7 +40,7 @@ export default function MonthlyInsights() {
                   <h4 className="font-semibold text-navy-900">What improved this month</h4>
                 </div>
                 <p className="text-sm text-navy-700 leading-relaxed">
-                  Website visits increased <span className="font-semibold text-green-600">15%</span> this month. Your "Services" page is getting the most attention—consider adding more detail there.
+                  Website visits increased <span className="font-semibold text-green-600">15%</span> this month. Your "Services" page is getting the most attention - consider adding more detail there.
                 </p>
               </div>
 
@@ -79,7 +79,7 @@ export default function MonthlyInsights() {
             {/* Footer note */}
             <div className="mt-8 pt-6 border-t border-navy-100">
               <p className="text-xs text-navy-600 italic">
-                All insights written in plain language — no technical jargon.
+                All insights written in plain language - no technical jargon.
               </p>
             </div>
           </div>
