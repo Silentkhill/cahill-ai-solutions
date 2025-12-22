@@ -1,5 +1,6 @@
 import { useState } from 'react'
-import { Send, Mail } from 'lucide-react'
+import { Send, Mail, Calendar } from 'lucide-react'
+import CalBooking from './CalBooking'
 
 const challenges = [
   'Too much admin work',
@@ -10,6 +11,7 @@ const challenges = [
 ]
 
 export default function Contact() {
+  const [activeTab, setActiveTab] = useState<'form' | 'booking'>('form')
   const [formData, setFormData] = useState({
     name: '',
     businessName: '',
@@ -91,10 +93,38 @@ export default function Contact() {
             </p>
           </div>
 
-          <div className="card-premium p-12 relative overflow-hidden">
-            {/* Decorative gradient */}
-            <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-accent-500 to-accent-600 opacity-5 rounded-full blur-3xl" />
-            <form onSubmit={handleSubmit} className="space-y-6 relative z-10" noValidate>
+          {/* Tab selector */}
+          <div className="flex gap-4 mb-8 justify-center">
+            <button
+              onClick={() => setActiveTab('form')}
+              className={`px-6 py-3 rounded-xl font-semibold transition-all duration-300 ${
+                activeTab === 'form'
+                  ? 'bg-accent-600 text-white shadow-lg'
+                  : 'bg-white text-navy-700 border-2 border-navy-200 hover:border-accent-300'
+              }`}
+            >
+              <Send size={18} className="inline mr-2" />
+              Request Review
+            </button>
+            <button
+              onClick={() => setActiveTab('booking')}
+              className={`px-6 py-3 rounded-xl font-semibold transition-all duration-300 ${
+                activeTab === 'booking'
+                  ? 'bg-accent-600 text-white shadow-lg'
+                  : 'bg-white text-navy-700 border-2 border-navy-200 hover:border-accent-300'
+              }`}
+            >
+              <Calendar size={18} className="inline mr-2" />
+              Book a Call
+            </button>
+          </div>
+
+          {/* Form Tab */}
+          {activeTab === 'form' && (
+            <div className="card-premium p-12 relative overflow-hidden">
+              {/* Decorative gradient */}
+              <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-accent-500 to-accent-600 opacity-5 rounded-full blur-3xl" />
+              <form onSubmit={handleSubmit} className="space-y-6 relative z-10" noValidate>
               <div>
                 <label htmlFor="name" className="block text-sm font-semibold text-navy-900 mb-2">
                   Name <span className="text-accent-600">*</span>
@@ -235,6 +265,16 @@ export default function Contact() {
               </p>
             </form>
           </div>
+          )}
+
+          {/* Booking Tab */}
+          {activeTab === 'booking' && (
+            <CalBooking
+              calLink="YOUR_CAL_COM_USERNAME"
+              mode="embed"
+              className="w-full"
+            />
+          )}
         </div>
       </div>
     </section>
