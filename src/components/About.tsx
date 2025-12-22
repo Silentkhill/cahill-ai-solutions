@@ -5,17 +5,17 @@ const philosophy = [
   {
     icon: Lightbulb,
     principle: 'Clarity over complexity',
-    explanation: 'I translate complex ideas into clear, practical steps. No jargon. No overwhelm.',
+    explanation: 'I turn complicated ideas into clear, practical steps. No jargon. No overwhelm.',
   },
   {
     icon: Heart,
     principle: 'People over technology',
-    explanation: 'AI supports people - it doesn\'t replace them. Every solution starts with understanding your actual needs.',
+    explanation: 'AI should support your team, not replace it. Every system starts with how you actually work day to day.',
   },
   {
     icon: Shield,
     principle: 'Responsible use',
-    explanation: 'I prioritize ethical AI use and privacy. You\'ll always know what data is used and how it\'s protected.',
+    explanation: 'Privacy and trust matter. You will always know what data is used, where it is stored, and what is shared.',
   },
 ]
 
@@ -65,7 +65,7 @@ export default function About() {
           {/* Personal note - human, not promotional */}
           <div className="card-focused p-8 bg-navy-50/50">
             <p className="text-base text-navy-700 leading-relaxed">
-              I'm a teacher and AI Committee Lead, which means I spend my days helping people understand and use AI responsibly. When I work with small businesses in Toronto, I bring that same clarity-first approach: practical solutions that genuinely save time and reduce stress.
+              I am a teacher and AI Committee Lead, and my job is to help people use AI thoughtfully and responsibly. I bring that same clarity-first approach to small businesses in Toronto: practical systems that save time, reduce busywork, and make decisions easier.
             </p>
           </div>
         </div>
