@@ -16,10 +16,10 @@ export default function Footer() {
                 <div className="flex items-center gap-2">
                   <Mail size={16} />
                   <a
-                    href="mailto:info@cahillaisolutions.com"
+                    href="mailto:cahillaisolutions@gmail.com"
                     className="hover:text-white transition-colors"
                   >
-                    info@cahillaisolutions.com
+                    cahillaisolutions@gmail.com
                   </a>
                 </div>
               </div>
