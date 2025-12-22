@@ -35,17 +35,15 @@ export default function HowItWorks() {
       <div className="container-custom relative z-10">
         <div className="max-w-5xl mx-auto">
           {/* Enhanced headline - centered like other sections */}
-          <div className="text-center mb-20">
+          <div className="text-center mb-16">
             <div className="inline-block px-4 py-2 bg-accent-100/80 backdrop-blur-sm rounded-full border border-accent-200/50 mb-6">
               <span className="text-sm font-semibold text-accent-900">Our Process</span>
             </div>
-            <h2 className="text-headline text-navy-900 mb-6">
+            <h2 className="text-headline text-navy-900 mb-4">
               How It Works
             </h2>
-            <p className="text-subhead max-w-3xl mx-auto text-navy-600">
-              A simple, practical process: <span className="font-semibold text-navy-900">AI Foundations</span> (one-time)
-              <span className="mx-2 text-navy-400">→</span>
-              <span className="font-semibold text-navy-900">AI Operations</span> (monthly).
+            <p className="text-lg text-navy-600 max-w-2xl mx-auto">
+              A simple, practical process
             </p>
           </div>
 
@@ -53,6 +51,13 @@ export default function HowItWorks() {
           <div className="grid gap-8 lg:grid-cols-12">
             {/* Phase 1: AI Foundations */}
             <div className="lg:col-span-7">
+              {/* Phase description above card */}
+              <div className="mb-4">
+                <p className="text-lg font-semibold text-navy-900">
+                  <span className="text-navy-600">Phase 1:</span> AI Foundations <span className="text-navy-500 font-normal">(one-time)</span>
+                </p>
+              </div>
+              
               <div className="card-premium p-8 relative overflow-hidden">
                 {/* Decorative gradient */}
                 <div className="absolute top-0 right-0 w-48 h-48 bg-gradient-to-br from-blue-500 to-blue-600 opacity-5 rounded-full blur-3xl" />
@@ -125,6 +130,13 @@ export default function HowItWorks() {
 
             {/* Phase 2: AI Operations */}
             <div className="lg:col-span-5">
+              {/* Phase description above card */}
+              <div className="mb-4">
+                <p className="text-lg font-semibold text-navy-900">
+                  <span className="text-navy-600">Phase 2:</span> AI Operations <span className="text-navy-500 font-normal">(monthly)</span>
+                </p>
+              </div>
+              
               <div className="card-premium p-8 relative overflow-hidden h-full">
                 {/* Decorative gradient */}
                 <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-accent-500 to-accent-600 opacity-5 rounded-full blur-3xl" />
