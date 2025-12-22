@@ -46,10 +46,15 @@ export default function Navigation() {
               e.preventDefault()
               window.scrollTo({ top: 0, behavior: 'smooth' })
             }}
-            className="text-xl font-extrabold text-navy-900 hover:text-accent-600 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-accent-500 focus:ring-offset-2 rounded-lg px-2 py-1"
+            className="flex items-center gap-3 hover:opacity-80 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-accent-500 focus:ring-offset-2 rounded-lg px-2 py-1"
             aria-label="Cahill AI Solutions - Home"
           >
-            <span className="bg-gradient-to-r from-navy-900 to-navy-700 bg-clip-text text-transparent hover:from-accent-600 hover:to-accent-700 transition-all">
+            <img 
+              src="/Logo.png" 
+              alt="Cahill AI Solutions" 
+              className="h-8 w-auto"
+            />
+            <span className="text-xl font-extrabold text-navy-900 bg-gradient-to-r from-navy-900 to-navy-700 bg-clip-text text-transparent hover:from-accent-600 hover:to-accent-700 transition-all hidden sm:inline-block">
               Cahill AI Solutions
             </span>
           </a>

@@ -7,7 +7,14 @@ export default function Footer() {
         <div className="max-w-4xl mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 mb-8">
             <div>
-              <h3 className="text-xl font-bold mb-4">Cahill AI Solutions</h3>
+              <div className="flex items-center gap-3 mb-4">
+                <img 
+                  src="/Logo.png" 
+                  alt="Cahill AI Solutions" 
+                  className="h-10 w-auto"
+                />
+                <h3 className="text-xl font-bold">Cahill AI Solutions</h3>
+              </div>
               <div className="space-y-2 text-sm text-navy-300">
                 <div className="flex items-center gap-2">
                   <MapPin size={16} />
