@@ -12,6 +12,7 @@ const challenges = [
 
 export default function Contact() {
   const [activeTab, setActiveTab] = useState<'form' | 'booking'>('form')
+  const [meetingDuration, setMeetingDuration] = useState<'15min' | '30min'>('30min')
   const [formData, setFormData] = useState({
     name: '',
     businessName: '',
@@ -269,11 +270,38 @@ export default function Contact() {
 
           {/* Booking Tab */}
           {activeTab === 'booking' && (
-            <CalBooking
-              calLink="YOUR_CAL_COM_USERNAME"
-              mode="embed"
-              className="w-full"
-            />
+            <div className="space-y-6">
+              {/* Duration selector */}
+              <div className="flex gap-4 justify-center mb-6">
+                <button
+                  onClick={() => setMeetingDuration('15min')}
+                  className={`px-6 py-3 rounded-xl font-semibold transition-all duration-300 ${
+                    meetingDuration === '15min'
+                      ? 'bg-accent-600 text-white shadow-lg'
+                      : 'bg-white text-navy-700 border-2 border-navy-200 hover:border-accent-300'
+                  }`}
+                >
+                  15 Minutes
+                </button>
+                <button
+                  onClick={() => setMeetingDuration('30min')}
+                  className={`px-6 py-3 rounded-xl font-semibold transition-all duration-300 ${
+                    meetingDuration === '30min'
+                      ? 'bg-accent-600 text-white shadow-lg'
+                      : 'bg-white text-navy-700 border-2 border-navy-200 hover:border-accent-300'
+                  }`}
+                >
+                  30 Minutes
+                </button>
+              </div>
+              
+              {/* Cal.com booking widget */}
+              <CalBooking
+                embedUrl={`https://cal.com/keegan-cahill-qc27lk/${meetingDuration}?embed=true`}
+                mode="embed"
+                className="w-full"
+              />
+            </div>
           )}
         </div>
       </div>
