@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Cahill AI Solutions social preview image">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0b1323"/>
+      <stop offset="100%" stop-color="#1e3a8a"/>
+    </linearGradient>
+    <radialGradient id="blob1" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(980 140) rotate(90) scale(180)">
+      <stop stop-color="#22d3ee" stop-opacity="0.28"/>
+      <stop offset="1" stop-color="#22d3ee" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="blob2" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1020 420) rotate(90) scale(240)">
+      <stop stop-color="#0ea5e9" stop-opacity="0.24"/>
+      <stop offset="1" stop-color="#0ea5e9" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="980" cy="140" r="180" fill="url(#blob1)"/>
+  <circle cx="1020" cy="420" r="240" fill="url(#blob2)"/>
+
+  <rect x="74" y="64" width="356" height="58" rx="14" fill="#111827" stroke="#22d3ee" stroke-width="2"/>
+  <text x="98" y="101" fill="#bfdbfe" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="700">Cahill AI Solutions</text>
+
+  <text x="76" y="216" fill="#f8fafc" font-family="Inter, Arial, sans-serif" font-size="74" font-weight="800">Practical AI Solutions</text>
+  <text x="76" y="298" fill="#e2e8f0" font-family="Inter, Arial, sans-serif" font-size="56" font-weight="700">for Toronto Small Businesses</text>
+
+  <text x="76" y="390" fill="#cbd5e1" font-family="Inter, Arial, sans-serif" font-size="36">Save time, improve marketing clarity, and make better decisions.</text>
+
+  <rect x="76" y="456" width="564" height="84" rx="18" fill="#0ea5e9"/>
+  <text x="110" y="510" fill="#f8fafc" font-family="Inter, Arial, sans-serif" font-size="33" font-weight="700">Book a Free AI Opportunity Review</text>
+</svg>

@@ -222,7 +222,20 @@ vercel
 - Safari (latest)
 - Edge (latest)
 
+## Social Card Visual QA Checklist
+
+Use this lightweight QA pass before publishing metadata changes:
+
+- [ ] Confirm required assets exist in `public/`: `og-image.svg`, `favicon.svg`, and `apple-touch-icon.svg`.
+- [ ] Confirm `public/og-image.svg` declares dimensions of **1200x630**.
+- [ ] Confirm `index.html` uses the same title/description language for `<title>`, `meta[name="description"]`, `og:title`, `og:description`, `twitter:title`, and `twitter:description`.
+- [ ] Confirm `og:image` and `twitter:image` both point to the same production URL.
+- [ ] Run social preview validators:
+  - Facebook Sharing Debugger
+  - LinkedIn Post Inspector
+  - Twitter/X Card Validator
+- [ ] Hard refresh debugger caches after metadata updates and verify the updated card image + copy render correctly.
+
 ## License
 
 All rights reserved. © Cahill AI Solutions
-
