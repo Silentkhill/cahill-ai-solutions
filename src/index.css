@@ -59,8 +59,7 @@
   /* Premium gradient backgrounds */
   .bg-gradient-hero {
     background: linear-gradient(135deg, #ffffff 0%, #f0f4f8 25%, #fff7ed 50%, #ffffff 75%, #f0f4f8 100%);
-    background-size: 400% 400%;
-    animation: gradientShift 15s ease infinite;
+    background-size: 100% 100%;
   }
   
   @keyframes gradientShift {
@@ -86,6 +85,12 @@
     opacity: 0.08;
   }
   
+  /* Motion hierarchy
+   * core: purposeful attention (1x per viewport)
+   * secondary: supporting reveal/feedback
+   * decorative: ambient only, low priority
+   */
+
   /* Premium animations */
   @keyframes fadeInUp {
     from {
@@ -119,14 +124,17 @@
     100% { background-position: 1000px 0; }
   }
   
+  .motion-core,
   .fade-in-slow {
     animation: fadeInUp 1.2s cubic-bezier(0.4, 0, 0.2, 1);
   }
   
+  .motion-secondary,
   .fade-in-scale {
     animation: fadeInScale 0.8s cubic-bezier(0.4, 0, 0.2, 1);
   }
   
+  .motion-decorative,
   .float-animation {
     animation: float 6s ease-in-out infinite;
   }
@@ -146,8 +154,7 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    background-size: 200% 200%;
-    animation: gradientShift 3s ease infinite;
+    background-size: 100% 100%;
   }
   
   .text-gradient-subtle {
@@ -253,7 +260,7 @@
     position: absolute;
     border-radius: 50%;
     filter: blur(60px);
-    opacity: 0.3;
+    opacity: 0.18;
     pointer-events: none;
   }
   
@@ -271,5 +278,36 @@
     background: radial-gradient(circle, rgba(16, 42, 67, 0.3), transparent);
     bottom: -150px;
     left: -150px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    .motion-core,
+    .motion-secondary,
+    .motion-decorative,
+    .fade-in-slow,
+    .fade-in-scale,
+    .float-animation,
+    .bg-gradient-hero,
+    .text-gradient {
+      animation: none !important;
+      transition-duration: 0.01ms !important;
+      transition-delay: 0ms !important;
+    }
+
+    .noise-layer,
+    .accent-blob,
+    .btn-primary::before {
+      transition: none !important;
+    }
+
+    .animate-pulse,
+    .animate-bounce,
+    .animate-spin {
+      animation: none !important;
+    }
   }
 }
