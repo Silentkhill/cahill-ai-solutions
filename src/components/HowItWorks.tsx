@@ -1,38 +1,9 @@
-import { useState, useEffect, useRef } from 'react'
 import { Search, Wrench, BarChart3, Check } from 'lucide-react'
 
 export default function HowItWorks() {
-  const sectionRef = useRef<HTMLElement>(null)
-  const [noiseClass, setNoiseClass] = useState('')
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setNoiseClass('clarity')
-        } else {
-          setNoiseClass('')
-        }
-      },
-      { threshold: 0.1 }
-    )
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current)
-    }
-
-    return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current)
-      }
-    }
-  }, [])
-
   return (
-    <section id="how-it-works" className="section-padding bg-gradient-to-br from-white via-navy-50/20 to-white relative overflow-hidden" ref={sectionRef}>
-      <div className={`noise-layer ${noiseClass}`} />
-      
-      <div className="container-custom relative z-10">
+    <section id="how-it-works" className="section-padding bg-white">
+      <div className="container-custom">
         <div className="max-w-5xl mx-auto">
           {/* Enhanced headline - centered like other sections */}
           <div className="text-center mb-16">
@@ -58,14 +29,11 @@ export default function HowItWorks() {
                 </p>
               </div>
               
-              <div className="card-premium p-8 relative overflow-hidden">
-                {/* Decorative gradient */}
-                <div className="absolute top-0 right-0 w-48 h-48 bg-gradient-to-br from-blue-500 to-blue-600 opacity-5 rounded-full blur-3xl" />
-                
-                <div className="relative z-10">
+              <div className="card-focused p-8">
+                <div>
                   <div className="flex items-center justify-between mb-8">
                     <div className="flex items-center gap-3">
-                      <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center shadow-lg">
+                      <div className="w-12 h-12 bg-navy-700 rounded-xl flex items-center justify-center shadow-lg">
                         <Search className="text-white" size={24} />
                       </div>
                       <div>
@@ -81,8 +49,8 @@ export default function HowItWorks() {
                   {/* Timeline steps */}
                   <div className="space-y-8">
                     <div className="relative pl-12">
-                      <div className="absolute left-4 top-3 h-full w-0.5 bg-gradient-to-b from-blue-200 to-blue-300" />
-                      <div className="absolute left-0 top-2 flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-br from-blue-500 to-blue-600 shadow-lg border-2 border-white">
+                      <div className="absolute left-4 top-3 h-full w-0.5 bg-navy-200" />
+                      <div className="absolute left-0 top-2 flex h-8 w-8 items-center justify-center rounded-full bg-navy-700 shadow-lg border-2 border-white">
                         <span className="h-3 w-3 rounded-full bg-white" />
                       </div>
                       <h3 className="text-xl font-bold text-navy-900 mb-3">Discover</h3>
@@ -103,8 +71,8 @@ export default function HowItWorks() {
                     </div>
 
                     <div className="relative pl-12">
-                      <div className="absolute left-4 top-3 h-full w-0.5 bg-gradient-to-b from-blue-200 to-blue-300" />
-                      <div className="absolute left-0 top-2 flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-br from-blue-500 to-blue-600 shadow-lg border-2 border-white">
+                      <div className="absolute left-4 top-3 h-full w-0.5 bg-navy-200" />
+                      <div className="absolute left-0 top-2 flex h-8 w-8 items-center justify-center rounded-full bg-navy-700 shadow-lg border-2 border-white">
                         <Wrench className="text-white" size={16} />
                       </div>
                       <h3 className="text-xl font-bold text-navy-900 mb-3">Implement</h3>
@@ -137,14 +105,11 @@ export default function HowItWorks() {
                 </p>
               </div>
               
-              <div className="card-premium p-8 relative overflow-hidden h-full">
-                {/* Decorative gradient */}
-                <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-accent-500 to-accent-600 opacity-5 rounded-full blur-3xl" />
-                
-                <div className="relative z-10">
+              <div className="card-focused p-8 h-full">
+                <div>
                   <div className="flex items-center justify-between mb-8">
                     <div className="flex items-center gap-3">
-                      <div className="w-12 h-12 bg-gradient-to-br from-accent-500 to-accent-600 rounded-xl flex items-center justify-center shadow-lg">
+                      <div className="w-12 h-12 bg-accent-600 rounded-xl flex items-center justify-center shadow-lg">
                         <BarChart3 className="text-white" size={24} />
                       </div>
                       <div>
@@ -157,9 +122,9 @@ export default function HowItWorks() {
                     </span>
                   </div>
 
-                  <div className="mb-8 rounded-xl border border-navy-100 bg-gradient-to-br from-accent-50/30 to-white p-6">
+                  <div className="mb-8 rounded-xl border border-navy-100 bg-navy-50 p-6">
                     <div className="flex items-center gap-3 mb-4">
-                      <div className="w-10 h-10 bg-gradient-to-br from-accent-500 to-accent-600 rounded-lg flex items-center justify-center">
+                      <div className="w-10 h-10 bg-accent-600 rounded-lg flex items-center justify-center">
                         <BarChart3 className="text-white" size={20} />
                       </div>
                       <h3 className="text-lg font-bold text-navy-900">Improve Monthly</h3>
@@ -181,7 +146,7 @@ export default function HowItWorks() {
                   </div>
 
                   {/* Trust indicators */}
-                  <div className="rounded-xl border border-navy-100 bg-white/80 backdrop-blur-sm p-5 space-y-3">
+                  <div className="rounded-xl border border-navy-100 bg-white p-5 space-y-3">
                     <p className="text-xs font-bold text-navy-600 uppercase tracking-wider mb-2">Trust & Transparency</p>
                     <div className="space-y-2 text-sm text-navy-700">
                       <div className="flex items-center gap-2">

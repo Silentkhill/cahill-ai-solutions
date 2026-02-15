@@ -91,15 +91,8 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="section-padding bg-gradient-to-br from-white via-navy-50/30 to-accent-50/20 relative overflow-hidden">
-      {/* Final clarity - noise fully resolved */}
-      <div className="noise-layer clarity" />
-      
-      {/* Decorative blobs */}
-      <div className="accent-blob accent-blob-1" style={{ top: '10%', right: '10%', opacity: 0.2 }} />
-      <div className="accent-blob accent-blob-2" style={{ bottom: '10%', left: '10%', opacity: 0.15 }} />
-      
-      <div className="container-custom relative z-10">
+    <section id="contact" className="section-padding bg-white">
+      <div className="container-custom">
         <div className="max-w-3xl mx-auto">
           {/* Enhanced headline */}
           <div className="text-center mb-16">
@@ -134,10 +127,8 @@ export default function Contact() {
             </div>
           </div>
 
-          <div className="card-premium p-8 sm:p-12 relative overflow-hidden">
-              {/* Decorative gradient */}
-              <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-accent-500 to-accent-600 opacity-5 rounded-full blur-3xl" />
-              <form onSubmit={handleSubmit} className="space-y-6 relative z-10" noValidate>
+          <div className="card-focused p-8 sm:p-12">
+              <form onSubmit={handleSubmit} className="space-y-6" noValidate>
               {formStep === 1 && (
                 <>
               <div>

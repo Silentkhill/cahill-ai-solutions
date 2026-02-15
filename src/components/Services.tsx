@@ -1,5 +1,5 @@
-import { Check, ArrowRight, Sparkles, TrendingUp, Zap } from 'lucide-react'
-import { useState, useEffect, useRef } from 'react'
+import { Check, Sparkles, TrendingUp, Zap } from 'lucide-react'
+import { useEffect, useRef } from 'react'
 
 // Pricing as depth of partnership, not tiers
 const partnerships = [
@@ -129,10 +129,8 @@ export default function Services() {
   }
 
   return (
-    <section id="pricing" className="section-padding bg-gradient-to-br from-navy-50/40 via-white to-accent-50/20 relative overflow-hidden" ref={sectionRef}>
-      <div className="noise-layer clarity" />
-      
-      <div className="container-custom relative z-10">
+    <section id="pricing" className="section-padding bg-navy-50" ref={sectionRef}>
+      <div className="container-custom">
         {/* Enhanced headline */}
         <div className="text-center mb-20">
           <div className="inline-block px-4 py-2 bg-accent-100/80 backdrop-blur-sm rounded-full border border-accent-200/50 mb-6">
@@ -159,7 +157,7 @@ export default function Services() {
               return (
                 <div
                   key={index}
-                  className={`pricing-card opacity-0 translate-y-8 scale-95 transition-all duration-700 ease-out card-premium p-10 relative overflow-hidden ${
+                  className={`pricing-card opacity-0 translate-y-8 scale-95 transition-all duration-700 ease-out card-focused p-10 relative overflow-hidden ${
                     pkg.popular ? 'border-2 border-accent-300 shadow-2xl' : ''
                   }`}
                 >
@@ -170,12 +168,9 @@ export default function Services() {
                     </div>
                   )}
                   
-                  {/* Decorative gradient */}
-                  <div className={`absolute top-0 right-0 w-48 h-48 bg-gradient-to-br ${pkg.color} opacity-10 rounded-full blur-3xl`} />
-                  
-                  <div className="relative z-10">
+                  <div>
                     {/* Icon */}
-                    <div className={`w-16 h-16 bg-gradient-to-br ${pkg.color} rounded-2xl flex items-center justify-center shadow-xl mb-6`}>
+                    <div className="w-16 h-16 bg-navy-700 rounded-2xl flex items-center justify-center mb-6">
                       <Icon className="text-white" size={32} />
                     </div>
                     
@@ -193,7 +188,7 @@ export default function Services() {
                     <ul className="space-y-4 mb-8">
                       {pkg.includes.map((item, idx) => (
                         <li key={idx} className="flex items-start gap-3">
-                          <div className={`w-6 h-6 bg-gradient-to-br ${pkg.color} rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5 shadow-md`}>
+                          <div className="w-6 h-6 bg-navy-700 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
                             <Check className="text-white" size={14} />
                           </div>
                           <span className="text-base text-navy-700 font-medium">{item}</span>
@@ -221,7 +216,7 @@ export default function Services() {
             <p className="text-lg text-navy-700 max-w-2xl mx-auto mb-8">Monthly support. Predictable cost, predictable output.</p>
             
             {/* What is an improvement - enhanced */}
-            <div className="card-premium p-8 max-w-3xl mx-auto bg-gradient-to-br from-white to-accent-50/30">
+            <div className="card-focused p-8 max-w-3xl mx-auto bg-gradient-to-br from-white to-accent-50/30">
               <div className="flex items-start gap-4">
                 <div className="w-12 h-12 bg-gradient-to-br from-accent-500 to-accent-600 rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg">
                   <Sparkles className="text-white" size={24} />
@@ -261,7 +256,7 @@ export default function Services() {
               return (
                 <div
                   key={index}
-                  className={`pricing-card opacity-0 translate-y-8 scale-95 transition-all duration-700 ease-out card-premium p-8 relative overflow-hidden ${
+                  className={`pricing-card opacity-0 translate-y-8 scale-95 transition-all duration-700 ease-out card-focused p-8 relative overflow-hidden ${
                     plan.popular ? 'border-2 border-accent-300 shadow-2xl md:scale-105' : ''
                   }`}
                   style={{ transitionDelay: `${index * 100}ms` }}
@@ -273,12 +268,9 @@ export default function Services() {
                     </div>
                   )}
                   
-                  {/* Decorative gradient */}
-                  <div className={`absolute top-0 right-0 w-40 h-40 bg-gradient-to-br ${plan.color} opacity-10 rounded-full blur-3xl`} />
-                  
-                  <div className="relative z-10">
+                  <div>
                     {/* Icon */}
-                    <div className={`w-14 h-14 bg-gradient-to-br ${plan.color} rounded-xl flex items-center justify-center shadow-lg mb-6`}>
+                    <div className="w-14 h-14 bg-navy-700 rounded-xl flex items-center justify-center mb-6">
                       <Icon className="text-white" size={28} />
                     </div>
                     
@@ -289,7 +281,7 @@ export default function Services() {
                         <span className="text-4xl font-extrabold text-navy-900">{plan.price}</span>
                         <span className="text-base text-navy-600 font-medium">{plan.period}</span>
                       </div>
-                      <div className={`bg-gradient-to-r ${plan.color} bg-opacity-10 rounded-xl px-4 py-2.5 mb-4 border border-accent-200/50`}>
+                      <div className="bg-navy-50 rounded-xl px-4 py-2.5 mb-4 border border-navy-200">
                         <span className="text-sm font-bold text-navy-900">{plan.improvements}</span>
                       </div>
                       <p className="text-sm text-navy-600 italic">{plan.relationship}</p>
@@ -298,7 +290,7 @@ export default function Services() {
                     <ul className="space-y-3 mb-6">
                       {plan.includes.map((item, idx) => (
                         <li key={idx} className="flex items-start gap-3">
-                          <div className={`w-5 h-5 bg-gradient-to-br ${plan.color} rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5 shadow-md`}>
+                          <div className="w-5 h-5 bg-navy-700 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
                             <Check className="text-white" size={12} />
                           </div>
                           <span className="text-sm text-navy-700 font-medium">{item}</span>
