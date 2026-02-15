@@ -201,11 +201,11 @@ export default function Services() {
                       ))}
                     </ul>
                     
-                    <button 
+                    <button
                       onClick={scrollToContact} 
-                      className={`btn-primary w-full ${pkg.popular ? 'glow-accent-hover' : ''}`}
+                      className="btn-primary w-full"
                     >
-                      Get Started
+                      Get Your Free AI Opportunity Review
                     </button>
                   </div>
                 </div>
@@ -313,9 +313,9 @@ export default function Services() {
                     
                     <button
                       onClick={scrollToContact}
-                      className={`w-full ${plan.popular ? 'btn-primary glow-accent-hover' : 'btn-secondary'}`}
+                      className="w-full btn-primary"
                     >
-                      Get Started
+                      Get Your Free AI Opportunity Review
                     </button>
                   </div>
                 </div>

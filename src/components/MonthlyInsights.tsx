@@ -93,9 +93,9 @@ export default function MonthlyInsights() {
                   element.scrollIntoView({ behavior: 'smooth', block: 'start' })
                 }
               }}
-              className="btn-secondary inline-flex items-center gap-2"
+              className="btn-primary inline-flex items-center gap-2"
             >
-              Get your first report
+              Get Your Free AI Opportunity Review
               <ArrowRight size={18} />
             </button>
           </div>

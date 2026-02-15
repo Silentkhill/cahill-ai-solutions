@@ -58,7 +58,7 @@ export default function Hero() {
                 onClick={scrollToContact}
                 className="btn-primary inline-flex items-center gap-3 group"
               >
-                <span>Get a Free AI Opportunity Review</span>
+                <span>Get Your Free AI Opportunity Review</span>
                 <ArrowRight size={22} className="group-hover:translate-x-1 transition-transform" />
               </button>
               <div className="pt-2">

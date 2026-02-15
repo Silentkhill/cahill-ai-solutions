@@ -2,16 +2,15 @@ import { useState, useEffect } from 'react'
 import { Menu, X } from 'lucide-react'
 
 const navItems = [
-  { label: 'Services', href: '#services' },
-  { label: 'How It Works', href: '#how-it-works' },
-  { label: 'Pricing', href: '#pricing' },
-  { label: 'About', href: '#about' },
+  { label: 'Offer', href: '#services' },
+  { label: 'Process', href: '#how-it-works' },
   { label: 'Contact', href: '#contact' },
 ]
 
 export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [activeSection, setActiveSection] = useState('#services')
 
   useEffect(() => {
     const handleScroll = () => {
@@ -19,6 +18,35 @@ export default function Navigation() {
     }
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
+  useEffect(() => {
+    const sections = navItems
+      .map((item) => ({ href: item.href, element: document.querySelector(item.href) }))
+      .filter((item): item is { href: string; element: Element } => item.element !== null)
+
+    if (sections.length === 0) return
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visibleSections = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)
+
+        if (visibleSections.length > 0) {
+          const href = `#${visibleSections[0].target.id}`
+          setActiveSection(href)
+        }
+      },
+      {
+        threshold: [0.2, 0.4, 0.6],
+        rootMargin: '-25% 0px -45% 0px',
+      }
+    )
+
+    sections.forEach(({ element }) => observer.observe(element))
+
+    return () => observer.disconnect()
   }, [])
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
@@ -66,18 +94,22 @@ export default function Navigation() {
                 key={item.href}
                 href={item.href}
                 onClick={(e) => handleNavClick(e, item.href)}
-                className="text-sm font-semibold text-navy-700 hover:text-accent-600 transition-all duration-300 relative group focus:outline-none focus:ring-2 focus:ring-accent-500 focus:ring-offset-2 rounded-lg px-2 py-1"
+                aria-current={activeSection === item.href ? 'page' : undefined}
+                className={`text-sm font-semibold transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-accent-500 focus:ring-offset-2 rounded-lg px-3 py-2 ${
+                  activeSection === item.href
+                    ? 'text-accent-700 bg-accent-50'
+                    : 'text-navy-700 hover:text-accent-600'
+                }`}
               >
                 {item.label}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-accent-600 to-accent-700 group-hover:w-full transition-all duration-300" />
               </a>
             ))}
             <a
               href="#contact"
               onClick={(e) => handleNavClick(e, '#contact')}
-              className="px-6 py-2.5 bg-gradient-to-r from-accent-600 to-accent-700 text-white rounded-xl hover:from-accent-700 hover:to-accent-800 transition-all duration-300 text-sm font-bold shadow-lg shadow-accent-500/30 hover:shadow-xl hover:shadow-accent-500/40 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-accent-500 focus:ring-offset-2"
+              className="px-6 py-2.5 bg-accent-600 text-white rounded-xl hover:bg-accent-700 transition-colors duration-200 text-sm font-bold focus:outline-none focus:ring-2 focus:ring-accent-500 focus:ring-offset-2"
             >
-              Free AI Review
+              Get Your Free AI Opportunity Review
             </a>
           </div>
 
@@ -99,7 +131,12 @@ export default function Navigation() {
                 key={item.href}
                 href={item.href}
                 onClick={(e) => handleNavClick(e, item.href)}
-                className="block px-4 py-3 text-navy-700 hover:text-accent-600 hover:bg-accent-50 rounded-xl transition-all duration-300 font-medium"
+                aria-current={activeSection === item.href ? 'page' : undefined}
+                className={`block px-4 py-3 rounded-xl transition-colors duration-200 font-medium ${
+                  activeSection === item.href
+                    ? 'text-accent-700 bg-accent-50'
+                    : 'text-navy-700 hover:text-accent-600 hover:bg-accent-50'
+                }`}
               >
                 {item.label}
               </a>
@@ -107,9 +144,9 @@ export default function Navigation() {
             <a
               href="#contact"
               onClick={(e) => handleNavClick(e, '#contact')}
-              className="block px-4 py-3 bg-gradient-to-r from-accent-600 to-accent-700 text-white rounded-xl text-center font-bold mt-2 shadow-lg"
+              className="block px-4 py-3 bg-accent-600 hover:bg-accent-700 transition-colors duration-200 text-white rounded-xl text-center font-bold mt-2"
             >
-              Free AI Review
+              Get Your Free AI Opportunity Review
             </a>
           </div>
         )}
