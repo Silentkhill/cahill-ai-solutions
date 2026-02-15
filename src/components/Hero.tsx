@@ -1,5 +1,5 @@
-import { ArrowRight, Sparkles, Zap, TrendingUp } from 'lucide-react'
-import { useState, useEffect } from 'react'
+import { ArrowRight, Sparkles } from 'lucide-react'
+import { useEffect, useState } from 'react'
 
 export default function Hero() {
   const [scrollProgress, setScrollProgress] = useState(0)
@@ -40,16 +40,15 @@ export default function Hero() {
           <div className="asymmetric-left mb-16 motion-core">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-accent-100/80 backdrop-blur-sm rounded-full border border-accent-200/50 mb-8">
               <Sparkles className="text-accent-600" size={16} />
-              <span className="text-sm font-semibold text-accent-900">Practical AI for Local Businesses</span>
+              <span className="type-caption font-semibold text-accent-900">Practical AI for Local Businesses</span>
             </div>
 
-            <h1 className="text-display text-navy-900 mb-8 leading-none">
-              <span className="block">Practical AI</span>
-              <span className="block text-gradient mt-2">Solutions</span>
-              <span className="block text-navy-700 text-5xl sm:text-6xl md:text-7xl mt-4 font-light">for Local Small Businesses</span>
+            <h1 className="type-display text-navy-900 mb-8">
+              <span className="block">Practical AI Solutions</span>
+              <span className="block text-navy-700 font-semibold mt-3">for Local Small Businesses</span>
             </h1>
 
-            <p className="text-subhead max-w-3xl mb-12 text-navy-600">
+            <p className="type-body measure-body mb-12 text-navy-600">
               Save time, improve marketing, and make smarter decisions without hype or technical overwhelm.
             </p>
 
@@ -61,41 +60,30 @@ export default function Hero() {
                 <span>Get a Free AI Opportunity Review</span>
                 <ArrowRight size={22} className="group-hover:translate-x-1 transition-transform" />
               </button>
-              <div className="pt-2">
-                <p className="text-sm text-navy-600 font-medium">
-                  No pressure. If it's not a fit, you'll still get 2–3 helpful suggestions.
-                </p>
-              </div>
+              <p className="type-caption measure-body pt-2 font-medium text-navy-600">
+                No pressure. If it's not a fit, you'll still get 2–3 helpful suggestions.
+              </p>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-6 max-w-4xl mt-16">
+            <ul className="grid md:grid-cols-3 gap-5 max-w-5xl mt-14">
               {[
-                { icon: Zap, text: 'Reduce admin work and manual tasks' },
-                { icon: Sparkles, text: 'Create better content in less time' },
-                { icon: TrendingUp, text: 'Get monthly AI insights you can use' },
-              ].map((item, index) => {
-                const Icon = item.icon
-                return (
-                  <div
-                    key={index}
-                    className="flex items-center gap-3 p-4 bg-white/60 backdrop-blur-sm rounded-xl border border-navy-100/50"
-                  >
-                    <div className="w-12 h-12 bg-gradient-to-br from-accent-500 to-accent-600 rounded-lg flex items-center justify-center shadow-lg">
-                      <Icon className="text-white" size={24} />
-                    </div>
-                    <p className="text-sm font-semibold text-navy-900">{item.text}</p>
-                  </div>
-                )
-              })}
-            </div>
+                'Reduce admin work and manual tasks',
+                'Create better content in less time',
+                'Get monthly AI insights you can use',
+              ].map((item) => (
+                <li
+                  key={item}
+                  className="p-4 bg-white/60 backdrop-blur-sm rounded-xl border border-navy-100/50"
+                >
+                  <p className="type-body text-base font-semibold text-navy-900">{item}</p>
+                </li>
+              ))}
+            </ul>
           </div>
 
           <div className="asymmetric-right mt-20 pt-8 border-t border-navy-200/50">
-            <div className="flex flex-wrap items-center gap-4 text-sm">
-              <div className="flex items-center gap-2">
-                <div className="w-2 h-2 bg-accent-500 rounded-full" />
-                <span className="font-semibold text-navy-900">Serving Toronto & GTA</span>
-              </div>
+            <div className="flex flex-wrap items-center gap-4 type-caption">
+              <span className="font-semibold text-navy-900">Serving Toronto & GTA</span>
               <span className="text-navy-400">•</span>
               <span className="text-navy-600">No long-term contracts</span>
               <span className="text-navy-400">•</span>
